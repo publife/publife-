@@ -14,6 +14,7 @@ font-family:Arial, Helvetica, sans-serif;
 color:#f5f5f5;
 background:#0b0b0b;
 text-align:center;
+overflow-x:hidden;
 }
 
 /* Background logo */
@@ -22,70 +23,78 @@ position:fixed;
 top:50%;
 left:50%;
 transform:translate(-50%, -50%);
-opacity:0.08;
-width:120%;
-max-width:1000px;
+opacity:0.07;
+width:130%;
+max-width:1100px;
 z-index:0;
+pointer-events:none;
 }
 
 /* Banner */
 .banner{
 position:fixed;
 top:0;
+left:0;
 width:100%;
 background:#0f0f0f;
 color:#ffffff;
-padding:35px 25px;
-font-size:30px;
+padding:35px 20px;
+font-size:22px;
 font-weight:800;
-line-height:1.7;
+line-height:1.6;
 border-bottom:2px solid #333;
 z-index:2;
+box-sizing:border-box;
+word-wrap:break-word;
 }
 
-/* Main container */
+/* Container */
 .container{
 position:relative;
 z-index:1;
-max-width:800px;
-margin:auto;
-padding-top:260px;
-padding-bottom:80px;
+max-width:900px;
+margin:0 auto;
+padding-top:280px;
+padding-bottom:100px;
 display:flex;
 flex-direction:column;
 align-items:center;
+justify-content:center;
 }
 
 /* Logo */
 .logo{
-width:320px;
+width:360px;
+max-width:85%;
 margin-bottom:40px;
+display:block;
 }
 
 /* Headline */
 h1{
-font-size:42px;
-font-weight:800;
-margin-bottom:30px;
+font-size:48px;
+font-weight:900;
+margin-bottom:40px;
 }
 
-/* Buttons */
+/* Buttons container */
 .buttons{
 margin-top:20px;
 }
 
+/* Buttons */
 .buttons a{
 display:inline-block;
-margin:12px;
-padding:18px 36px;
-border-radius:12px;
+margin:15px;
+padding:20px 40px;
+border-radius:14px;
 text-decoration:none;
-font-size:20px;
-font-weight:700;
+font-size:22px;
+font-weight:800;
 transition:0.25s;
 }
 
-/* Button colors */
+/* Colors */
 .fb{
 background:#1877F2;
 color:white;
@@ -99,7 +108,7 @@ color:white;
 .donate{
 background:#d4af37;
 color:black;
-transform:scale(1.05);
+transform:scale(1.08);
 }
 
 /* Hover */
@@ -109,10 +118,11 @@ opacity:0.85;
 
 /* Subtext */
 .subtext{
-margin-top:20px;
-font-size:16px;
+margin-top:25px;
+font-size:18px;
 opacity:0.85;
-max-width:500px;
+max-width:550px;
+line-height:1.5;
 }
 
 </style>
@@ -130,7 +140,7 @@ PubLife is launching in Kansas City to support hospitality workers facing medica
 
 <div class="container">
 
-<!-- Top logo -->
+<!-- Logo -->
 <img src="Logo.png" class="logo">
 
 <h1>Serving the Ones Who Serve Us</h1>
