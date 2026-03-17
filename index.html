@@ -13,10 +13,6 @@ margin:0;
 font-family:Arial, Helvetica, sans-serif;
 color:#f5f5f5;
 background:#0b0b0b;
-display:flex;
-flex-direction:column;
-align-items:center;
-min-height:100vh;
 text-align:center;
 }
 
@@ -40,25 +36,30 @@ width:100%;
 background:#0f0f0f;
 color:#ffffff;
 padding:35px 25px;
-font-size:25px;
+font-size:30px;
 font-weight:800;
 line-height:1.7;
 border-bottom:2px solid #333;
 z-index:2;
 }
 
-/* Container */
+/* Main container */
 .container{
 position:relative;
 z-index:1;
 max-width:800px;
-padding:60;
+margin:auto;
+padding-top:260px;
+padding-bottom:80px;
+display:flex;
+flex-direction:column;
+align-items:center;
 }
 
 /* Logo */
 .logo{
-width:400px;
-margin-bottom:25px;
+width:320px;
+margin-bottom:40px;
 }
 
 /* Headline */
@@ -69,6 +70,10 @@ margin-bottom:30px;
 }
 
 /* Buttons */
+.buttons{
+margin-top:20px;
+}
+
 .buttons a{
 display:inline-block;
 margin:12px;
@@ -94,6 +99,7 @@ color:white;
 .donate{
 background:#d4af37;
 color:black;
+transform:scale(1.05);
 }
 
 /* Hover */
@@ -101,10 +107,12 @@ color:black;
 opacity:0.85;
 }
 
+/* Subtext */
 .subtext{
-margin-top:10px;
+margin-top:20px;
 font-size:16px;
 opacity:0.85;
+max-width:500px;
 }
 
 </style>
@@ -112,14 +120,17 @@ opacity:0.85;
 
 <body>
 
+<!-- Background logo -->
 <img src="inverted logo.png" class="bg-logo">
 
+<!-- Banner -->
 <div class="banner">
 PubLife is launching in Kansas City to support hospitality workers facing medical hardship. Follow our progress and support the mission below.
 </div>
 
 <div class="container">
 
+<!-- Top logo -->
 <img src="Logo.png" class="logo">
 
 <h1>Serving the Ones Who Serve Us</h1>
