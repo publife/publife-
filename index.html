@@ -10,34 +10,48 @@
 
 body{
 margin:0;
-background:black;
-color:white;
 font-family:Arial, Helvetica, sans-serif;
+color:white;
 text-align:center;
+background:black;
+overflow-x:hidden;
+}
+
+.bg-logo{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+opacity:0.08;
+width:90%;
+max-width:800px;
+z-index:0;
 }
 
 .container{
+position:relative;
+z-index:1;
 max-width:900px;
 margin:auto;
 padding:40px 20px;
 }
 
 .logo{
-width:260px;
-max-width:80%;
-margin:0 auto 30px;
-display:block;
+width:160px;
+margin-bottom:20px;
+}
+
+.banner{
+background:#111;
+border-bottom:1px solid #333;
+padding:15px;
+font-size:14px;
+line-height:1.5;
 }
 
 h1{
 font-size:32px;
-margin-bottom:10px;
-}
-
-.subtitle{
-font-size:20px;
-margin-bottom:30px;
-opacity:.9;
+margin:20px 0 10px;
 }
 
 .buttons a{
@@ -48,6 +62,7 @@ border:2px solid white;
 color:white;
 text-decoration:none;
 font-size:18px;
+transition:.25s;
 }
 
 .buttons a:hover{
@@ -61,15 +76,15 @@ color:black;
 
 <body>
 
+<img src="logo-inverted.png" class="bg-logo">
+
+<div class="banner">
+Currently constructing our website! Check back soon for updates, until then feel free to checkout our Facebook and Instagram. At PubLife we support hospitality workers facing medical hardship in the Kansas City Metro area. 
 <div class="container">
 
-<img src="logo.png" alt="PubLife Logo" class="logo">
+<img src="logo.png" class="logo">
 
 <h1>Serving the Ones Who Serve Us</h1>
-
-<div class="subtitle">
-Supporting the Kansas City Service Industry
-</div>
 
 <div class="buttons">
 
@@ -82,7 +97,7 @@ Instagram
 </a>
 
 <a href="#">
-Donate Now (Coming Soon)
+GoFundMe (Coming Soon)
 </a>
 
 </div>
