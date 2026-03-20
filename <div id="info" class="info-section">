@@ -1,0 +1,53 @@
+<div id="info" class="info-section">
+
+  <h2>About PubLife</h2>
+
+  <p>
+    PubLife exists to serve the ones who serve us.
+  </p>
+
+  <hr style="margin:30px 0; opacity:0.3;">
+
+  <h3>What We Do</h3>
+  <p>
+    PubLife provides financial assistance to hospitality workers facing unexpected medical hardship.
+  </p>
+
+  <h3>How It Works</h3>
+  <p>
+    Applicants submit documentation for review. Approved requests are paid directly to providers whenever possible.
+  </p>
+
+  <h3>Guidelines</h3>
+  <ul style="text-align:left; max-width:500px; margin:auto;">
+    <li>Maximum grant: $2,500</li>
+    <li>One grant per 12-month period</li>
+    <li>Funds are allocated based on availability</li>
+  </ul>
+
+  <h3>How We Sustain This Work</h3>
+  <p>
+    Through community events, local partnerships, and direct contributions, PubLife is sustained by the very community it exists to serve.
+  </p>
+
+  <h3>Our Commitment</h3>
+  <p>
+    We are committed to operating with transparency, dignity, and efficiency.
+  </p>
+
+  <h3>Additional Information</h3>
+  <p>
+    While we strive to assist as many individuals as possible, assistance is not guaranteed and is dependent on available funds and eligibility review.
+  </p>
+
+  <p>
+    For more information, email us at <strong>info@publife.org</strong>
+  </p>
+
+  <br><br>
+
+  <button onclick="closeInfo()" style="padding:16px 28px; font-size:18px;">
+    Close
+  </button>
+
+</div>
