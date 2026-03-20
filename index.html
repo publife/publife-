@@ -13,12 +13,11 @@
       font-family: 'Georgia', serif;
       text-align: center;
       height: 100vh;
-      overflow: hidden; /* NO SCROLL = POSTER */
+      overflow: hidden;
       display: flex;
       flex-direction: column;
     }
 
-    /* BACKGROUND */
     body::before {
       content: "";
       position: fixed;
@@ -35,7 +34,6 @@
       z-index: -1;
     }
 
-    /* BANNER (TOP STRIP) */
     .banner {
       background: #e8e1d3;
       color: black;
@@ -45,30 +43,31 @@
       letter-spacing: 2px;
     }
 
-    /* FULLSCREEN CONTENT */
     .container {
       flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: space-evenly; /* SPREAD CONTENT */
+      justify-content: center;
       align-items: center;
       padding: 10px 20px;
+      gap: 10px; /* tighter overall spacing */
     }
 
-    /* BIG LOGO */
     .logo {
       width: 95%;
       max-width: 420px;
+      margin-bottom: 10px;
     }
 
-    /* MASSIVE BUTTONS */
+    /* BIGGER + CLOSER BUTTONS */
     .btn {
-      width: 90%;
-      max-width: 420px;
-      padding: 22px;
-      font-size: 22px;
+      width: 92%;
+      max-width: 440px;
+      padding: 26px;
+      font-size: 24px;
       border-radius: 14px;
       letter-spacing: 2px;
+      margin: 6px 0; /* tighter spacing */
     }
 
     .apply {
@@ -87,8 +86,8 @@
       background: rgba(0,0,0,0.6);
     }
 
-    /* FOOTER (LOCKED BOTTOM FEEL) */
     .footer {
+      margin-top: 10px;
       font-size: 18px;
       line-height: 1.6;
     }
@@ -98,7 +97,6 @@
       font-size: 18px;
     }
 
-    /* SOCIAL BUTTONS */
     .socials span {
       display: inline-block;
       margin: 10px;
@@ -128,9 +126,10 @@
 
     <img src="Logo.png" class="logo">
 
-    <div class="btn apply">APPLY HERE</div>
-    <div class="btn donate">DONATE</div>
+    <!-- SWITCHED ORDER -->
     <div class="btn learn">LEARN ABOUT PUBLIFE</div>
+    <div class="btn donate">DONATE</div>
+    <div class="btn apply">APPLY HERE</div>
 
     <div class="footer">
       Kansas City, MO<br>
