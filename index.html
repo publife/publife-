@@ -7,16 +7,16 @@ HTML
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       background-color: #0b0b0b;
       color: white;
       font-family: 'Georgia', serif;
       text-align: center;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
     }
 
     body::before {
@@ -45,7 +45,7 @@ HTML
     }
 
     .container {
-      flex: 1;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -62,6 +62,7 @@ HTML
     }
 
     .btn {
+      display: block;
       width: 100%;
       max-width: 520px;
       padding: 34px;
@@ -70,17 +71,11 @@ HTML
       letter-spacing: 2px;
       margin: 2px 0;
       text-decoration: none;
-      display: block;
     }
 
     .learn {
       border: 5px solid white;
       background: rgba(0,0,0,0.6);
-      color: white;
-    }
-
-    .events {
-      border: 4px solid #888;
       color: white;
     }
 
@@ -94,17 +89,24 @@ HTML
       color: black;
     }
 
+    .events {
+      border: 3px solid #888;
+      color: white;
+    }
+
     .footer {
       margin-top: 6px;
       font-size: 16px;
     }
 
-    .socials span {
+    .socials a {
       display: inline-block;
       margin: 6px;
       padding: 10px;
       width: 42px;
       font-size: 16px;
+      text-decoration: none;
+      color: white;
     }
 
     .fb {
@@ -115,19 +117,17 @@ HTML
       border: 2px solid #e1306c;
     }
 
-    /* INFO SECTION (SCROLL TARGET) */
+    /* INFO SECTION */
     .info-section {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100vh;
-      background: #0b0b0b;
-      color: white;
-      padding: 40px 20px;
-      overflow-y: auto;
-      display: none;
-      z-index: 10;
+      padding: 60px 20px;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+      font-size: 18px;
+    }
+
+    .info-section h2 {
+      margin-top: 30px;
     }
 
   </style>
@@ -143,10 +143,9 @@ HTML
 
     <img src="Logo.png" class="logo">
 
-    <!-- BUTTONS -->
-    <a href="#" class="btn learn" onclick="openInfo()">LEARN ABOUT PUBLIFE</a>
+    <a href="#info" class="btn learn">LEARN ABOUT PUBLIFE</a>
+    <a href="https://gofund.me/35bd90c1a" class="btn donate">DONATE</a>
     <a href="events.html" class="btn events">EVENTS</a>
-    <a href="https://gofund.me/35bd90c1a" class="btn donate" target="_blank">DONATE</a>
     <a href="apply.html" class="btn apply">APPLY HERE</a>
 
     <div class="footer">
@@ -154,8 +153,8 @@ HTML
       <a href="mailto:info@publife.org" style="color:white;">info@publife.org</a>
 
       <div class="socials">
-        <a href="https://www.facebook.com/100069530393569/" target="_blank"><span class="fb">f</span></a>
-        <a href="https://www.instagram.com/publifekc" target="_blank"><span class="ig">ig</span></a>
+        <a href="https://www.facebook.com/100069530393569/" class="fb">f</a>
+        <a href="https://www.instagram.com/publifekc?igsh=MTlvZmdhN3Z3bDJ5eQ==" class="ig">ig</a>
       </div>
     </div>
 
@@ -163,28 +162,33 @@ HTML
 
   <!-- INFO SECTION -->
   <div id="info" class="info-section">
+
     <h2>About PubLife</h2>
+    <p>PubLife exists to serve the ones who serve us.</p>
+
+    <h2>What We Do</h2>
+    <p>PubLife provides financial assistance to hospitality workers facing unexpected medical hardship.</p>
+
+    <h2>How It Works</h2>
+    <p>Applicants submit documentation for review. Approved requests are paid directly to providers whenever possible.</p>
+
+    <h2>Guidelines</h2>
     <p>
-      PubLife exists to serve the ones who serve us.
+      Maximum grant: $2,500<br>
+      One grant per 12-month period<br>
+      Funds are allocated based on availability
     </p>
 
-    <p>
-      Full handbook and details will be available here at launch.
-    </p>
+    <h2>How We Sustain This Work</h2>
+    <p>Through community events, local partnerships, and direct contributions, PubLife is sustained by the very community it exists to serve.</p>
 
-    <br><br>
-    <button onclick="closeInfo()">Close</button>
+    <h2>Our Commitment</h2>
+    <p>We are committed to operating with transparency, dignity, and efficiency.</p>
+
+    <h2>Additional Information</h2>
+    <p>While we strive to assist as many individuals as possible, assistance is not guaranteed and is dependent on available funds and eligibility review.</p>
+
   </div>
-
-  <script>
-    function openInfo() {
-      document.getElementById('info').style.display = 'block';
-    }
-
-    function closeInfo() {
-      document.getElementById('info').style.display = 'none';
-    }
-  </script>
 
 </body>
 </html>
