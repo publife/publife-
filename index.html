@@ -13,26 +13,25 @@ body {
   color: white;
   font-family: Georgia, serif;
   text-align: center;
-  height: 100vh;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Background logo */
+/* Background */
 body::before {
   content: "";
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 180%;
-  height: 180%;
+  width: 150%;
+  height: 150%;
   background-image: url('inverted logo.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   transform: translate(-50%, -50%);
-  opacity: 0.08;
+  opacity: 0.07;
   z-index: -1;
 }
 
@@ -40,58 +39,57 @@ body::before {
 .banner {
   background: #e8e1d3;
   color: black;
-  padding: 26px;
-  font-size: 26px;
+  padding: 14px;
+  font-size: 16px;
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
-/* Main container */
+/* Layout */
 .container {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 16px;
-  max-width: 520px;
+  padding: 10px 16px 20px;
+  max-width: 420px;
   margin: auto;
 }
 
 /* Logo */
 .logo {
-  width: 100%;
-  max-width: 520px;
-  margin-bottom: 10px;
+  width: 85%;
+  max-width: 300px;
+  margin: 12px 0;
 }
 
 /* Buttons */
 .btn {
   width: 100%;
-  max-width: 520px;
-  padding: 36px;
-  font-size: 30px;
-  border-radius: 14px;
-  letter-spacing: 2px;
-  margin: 3px 0;
+  padding: 18px;
+  font-size: 16px;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  margin: 6px 0;
   text-decoration: none;
   display: block;
 }
 
 /* Button styles */
 .learn {
-  border: 5px solid white;
+  border: 3px solid white;
   background: rgba(0,0,0,0.6);
   color: white;
 }
 
 .events {
-  border: 4px solid #888;
+  border: 2px solid #888;
   color: white;
 }
 
 .donate {
-  border: 4px solid #b08d57;
+  border: 2px solid #b08d57;
   color: white;
 }
 
@@ -102,22 +100,22 @@ body::before {
 
 /* Footer */
 .footer {
-  margin-top: 6px;
-  font-size: 16px;
+  margin-top: 10px;
+  font-size: 13px;
 }
 
 .socials span {
   display: inline-block;
   margin: 6px;
-  padding: 10px;
-  width: 42px;
-  font-size: 16px;
+  padding: 8px;
+  width: 36px;
+  font-size: 14px;
 }
 
 .fb { border: 2px solid #1877f2; }
 .ig { border: 2px solid #e1306c; }
 
-/* ===== INFO SECTION (FIXED + VISIBLE) ===== */
+/* INFO SECTION */
 .info-section {
   position: fixed;
   top: 0;
@@ -125,14 +123,12 @@ body::before {
   right: 0;
   bottom: 0;
   background: #0b0b0b;
-  color: white;
-  padding: 90px 20px 40px;
+  padding: 70px 20px 40px;
   overflow-y: auto;
   display: none;
   z-index: 100;
 }
 
-/* FORCE TEXT VISIBILITY */
 .info-section h2,
 .info-section h3,
 .info-section p,
@@ -143,11 +139,11 @@ body::before {
 /* Close button */
 .close-btn {
   position: fixed;
-  top: 20px;
+  top: 15px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 8px 18px;
+  font-size: 14px;
 }
 
 </style>
@@ -190,10 +186,9 @@ body::before {
   <button class="close-btn" onclick="closeInfo()">Close</button>
 
   <h2>About PubLife</h2>
-
   <p>PubLife exists to serve the ones who serve us.</p>
 
-  <hr style="margin:30px 0; opacity:0.3;">
+  <hr style="margin:20px 0; opacity:0.3;">
 
   <h3>What We Do</h3>
   <p>PubLife provides financial assistance to hospitality workers facing unexpected medical hardship.</p>
@@ -202,7 +197,7 @@ body::before {
   <p>Applicants submit documentation for review. Approved requests are paid directly to providers whenever possible.</p>
 
   <h3>Guidelines</h3>
-  <ul style="text-align:left; max-width:500px; margin:auto;">
+  <ul style="text-align:left; max-width:400px; margin:auto;">
     <li>Maximum grant: $2,500</li>
     <li>One grant per 12-month period</li>
     <li>Funds are allocated based on availability</li>
