@@ -14,14 +14,14 @@
       text-align: center;
     }
 
-    /* CENTERED BACKGROUND EMBLEM */
+    /* CENTERED BACKGROUND */
     body::before {
       content: "";
       position: fixed;
       top: 50%;
       left: 50%;
-      width: 140%;
-      height: 140%;
+      width: 160%;
+      height: 160%;
       background-image: url('inverted logo.png');
       background-repeat: no-repeat;
       background-position: center;
@@ -34,34 +34,36 @@
     .banner {
       background: #e8e1d3;
       color: black;
-      padding: 14px;
-      font-size: 18px;
+      padding: 12px;
+      font-size: 16px;
       letter-spacing: 1px;
     }
 
     .container {
-      max-width: 420px;
+      max-width: 500px;
       margin: auto;
-      padding: 30px 20px;
+      padding: 10px 20px 40px 20px;
     }
 
-    /* BIGGER LOGO */
+    /* MUCH BIGGER LOGO */
     .logo {
-      width: 320px;
-      max-width: 90%;
-      margin: 60px auto 30px auto;
+      width: 380px;
+      max-width: 95%;
+      margin: 30px auto 10px auto;
       display: block;
     }
 
+    /* BUTTONS BIGGER + TIGHTER */
     .btn {
       display: block;
-      margin: 14px 0;
-      padding: 16px;
+      margin: 10px 0;
+      padding: 18px;
       text-decoration: none;
-      border-radius: 10px;
+      border-radius: 12px;
       font-size: 18px;
       letter-spacing: 1px;
-      cursor: default;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .apply {
@@ -80,24 +82,24 @@
     }
 
     .footer {
-      margin-top: 40px;
+      margin-top: 30px;
       font-size: 16px;
       line-height: 1.6;
     }
 
     .follow {
-      margin-top: 25px;
+      margin-top: 20px;
       opacity: 0.8;
     }
 
     .socials span {
       display: inline-block;
       margin: 10px;
-      padding: 12px;
+      padding: 14px;
       border: 1px solid white;
       color: white;
       font-size: 16px;
-      width: 40px;
+      width: 45px;
     }
   </style>
 </head>
@@ -110,10 +112,8 @@
 
   <div class="container">
 
-    <!-- YOUR LOGO -->
     <img src="Logo.png" class="logo">
 
-    <!-- BUTTONS (disabled for now) -->
     <div class="btn apply">APPLY HERE</div>
     <div class="btn donate">DONATE</div>
     <div class="btn learn">LEARN ABOUT PUBLIFE</div>
