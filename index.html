@@ -1,212 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>PubLife</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>PubLife</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      background-color: #0b0b0b;
-      color: white;
-      font-family: 'Georgia', serif;
-      text-align: center;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
+<style>
 
-    body::before {
-      content: "";
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      width: 180%;
-      height: 180%;
-      background-image: url('inverted logo.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      transform: translate(-50%, -50%);
-      opacity: 0.08;
-      z-index: -1;
-    }
+body {
+  margin: 0;
+  background-color: #0b0b0b;
+  color: white;
+  font-family: Georgia, serif;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
 
-    .banner {
-      background: #e8e1d3;
-      color: black;
-      padding: 24px;
-      font-size: 24px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
+/* Background logo */
+body::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 180%;
+  height: 180%;
+  background-image: url('inverted logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transform: translate(-50%, -50%);
+  opacity: 0.08;
+  z-index: -1;
+}
 
-    .container {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 0 16px;
-      max-width: 520px;
-      margin: auto;
-    }
+/* Banner */
+.banner {
+  background: #e8e1d3;
+  color: black;
+  padding: 26px;
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
 
-    .logo {
-      width: 100%;
-      max-width: 520px;
-      margin-bottom: 8px;
-    }
+/* Main container */
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px;
+  max-width: 520px;
+  margin: auto;
+}
 
-    .btn {
-      width: 100%;
-      max-width: 520px;
-      padding: 34px;
-      font-size: 28px;
-      border-radius: 14px;
-      letter-spacing: 2px;
-      margin: 2px 0;
-      text-decoration: none;
-      display: block;
-    }
+/* Logo */
+.logo {
+  width: 100%;
+  max-width: 520px;
+  margin-bottom: 10px;
+}
 
-    .learn {
-      border: 5px solid white;
-      background: rgba(0,0,0,0.6);
-      color: white;
-    }
+/* Buttons */
+.btn {
+  width: 100%;
+  max-width: 520px;
+  padding: 36px;
+  font-size: 30px;
+  border-radius: 14px;
+  letter-spacing: 2px;
+  margin: 3px 0;
+  text-decoration: none;
+  display: block;
+}
 
-    .events {
-      border: 4px solid #888;
-      color: white;
-    }
+/* Button styles */
+.learn {
+  border: 5px solid white;
+  background: rgba(0,0,0,0.6);
+  color: white;
+}
 
-    .donate {
-      border: 4px solid #b08d57;
-      color: white;
-    }
+.events {
+  border: 4px solid #888;
+  color: white;
+}
 
-    .apply {
-      background: #e8e1d3;
-      color: black;
-    }
+.donate {
+  border: 4px solid #b08d57;
+  color: white;
+}
 
-    .footer {
-      margin-top: 6px;
-      font-size: 16px;
-    }
+.apply {
+  background: #e8e1d3;
+  color: black;
+}
 
-    .socials span {
-      display: inline-block;
-      margin: 6px;
-      padding: 10px;
-      width: 42px;
-      font-size: 16px;
-    }
+/* Footer */
+.footer {
+  margin-top: 6px;
+  font-size: 16px;
+}
 
-    .fb {
-      border: 2px solid #1877f2;
-    }
+.socials span {
+  display: inline-block;
+  margin: 6px;
+  padding: 10px;
+  width: 42px;
+  font-size: 16px;
+}
 
-    .ig {
-      border: 2px solid #e1306c;
-    }
+.fb { border: 2px solid #1877f2; }
+.ig { border: 2px solid #e1306c; }
 
-    .info-section {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: #0b0b0b;
-      padding: 40px 20px;
-      overflow-y: auto;
-      display: none;
-      z-index: 10;
-    }
+/* ===== INFO SECTION (FIXED + VISIBLE) ===== */
+.info-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #0b0b0b;
+  color: white;
+  padding: 90px 20px 40px;
+  overflow-y: auto;
+  display: none;
+  z-index: 100;
+}
 
-  </style>
+/* FORCE TEXT VISIBILITY */
+.info-section h2,
+.info-section h3,
+.info-section p,
+.info-section li {
+  color: white;
+}
+
+/* Close button */
+.close-btn {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+</style>
 </head>
 
 <body>
 
-  <div class="banner">
-    Official Launch Coming Soon
-  </div>
+<div class="banner">
+  Official Launch Coming Soon
+</div>
 
-  <div class="container">
+<div class="container">
 
-    <img src="Logo.png" class="logo">
+  <img src="Logo.png" class="logo">
 
-    <a href="#" class="btn learn" onclick="openInfo()">LEARN ABOUT PUBLIFE</a>
-    <a href="events.html" class="btn events">EVENTS</a>
-    <a href="https://gofund.me/35bd90c1a" target="_blank" class="btn donate">DONATE</a>
-    <a href="apply.html" class="btn apply">APPLY HERE</a>
+  <a href="#" class="btn learn" onclick="openInfo()">LEARN ABOUT PUBLIFE</a>
+  <a href="events.html" class="btn events">EVENTS</a>
+  <a href="https://gofund.me/35bd90c1a" target="_blank" class="btn donate">DONATE</a>
+  <a href="apply.html" class="btn apply">APPLY HERE</a>
 
-    <div class="footer">
-      Kansas City, MO<br>
-      <a href="mailto:info@publife.org" style="color:white;">info@publife.org</a>
+  <div class="footer">
+    Kansas City, MO<br>
+    <a href="mailto:info@publife.org" style="color:white;">info@publife.org</a>
 
-      <div class="socials">
-        <a href="https://www.facebook.com/100069530393569/" target="_blank"><span class="fb">f</span></a>
-        <a href="https://www.instagram.com/publifekc" target="_blank"><span class="ig">ig</span></a>
-      </div>
+    <div class="socials">
+      <a href="https://www.facebook.com/100069530393569/" target="_blank">
+        <span class="fb">f</span>
+      </a>
+      <a href="https://www.instagram.com/publifekc" target="_blank">
+        <span class="ig">ig</span>
+      </a>
     </div>
-
   </div>
 
-  <!-- INFO SECTION (FIXED + COMPLETE) -->
-  <div id="info" class="info-section">
+</div>
 
-    <h2>About PubLife</h2>
+<!-- INFO SECTION -->
+<div id="info" class="info-section">
 
-    <p>PubLife exists to serve the ones who serve us.</p>
+  <button class="close-btn" onclick="closeInfo()">Close</button>
 
-    <hr style="margin:30px 0; opacity:0.3;">
+  <h2>About PubLife</h2>
 
-    <h3>What We Do</h3>
-    <p>PubLife provides financial assistance to hospitality workers facing unexpected medical hardship.</p>
+  <p>PubLife exists to serve the ones who serve us.</p>
 
-    <h3>How It Works</h3>
-    <p>Applicants submit documentation for review. Approved requests are paid directly to providers whenever possible.</p>
+  <hr style="margin:30px 0; opacity:0.3;">
 
-    <h3>Guidelines</h3>
-    <ul style="text-align:left; max-width:500px; margin:auto;">
-      <li>Maximum grant: $2,500</li>
-      <li>One grant per 12-month period</li>
-      <li>Funds are allocated based on availability</li>
-    </ul>
+  <h3>What We Do</h3>
+  <p>PubLife provides financial assistance to hospitality workers facing unexpected medical hardship.</p>
 
-    <h3>How We Sustain This Work</h3>
-    <p>Through community events, local partnerships, and direct contributions, PubLife is sustained by the very community it exists to serve.</p>
+  <h3>How It Works</h3>
+  <p>Applicants submit documentation for review. Approved requests are paid directly to providers whenever possible.</p>
 
-    <h3>Our Commitment</h3>
-    <p>We are committed to operating with transparency, dignity, and efficiency.</p>
+  <h3>Guidelines</h3>
+  <ul style="text-align:left; max-width:500px; margin:auto;">
+    <li>Maximum grant: $2,500</li>
+    <li>One grant per 12-month period</li>
+    <li>Funds are allocated based on availability</li>
+  </ul>
 
-    <h3>Additional Information</h3>
-    <p>While we strive to assist as many individuals as possible, assistance is not guaranteed and is dependent on available funds and eligibility review.</p>
+  <h3>How We Sustain This Work</h3>
+  <p>Through community events, local partnerships, and direct contributions, PubLife is sustained by the very community it exists to serve.</p>
 
-    <p>For more information, email us at <strong>info@publife.org</strong></p>
+  <h3>Our Commitment</h3>
+  <p>We are committed to operating with transparency, dignity, and efficiency.</p>
 
-    <br><br>
+  <h3>Additional Information</h3>
+  <p>While we strive to assist as many individuals as possible, assistance is not guaranteed and is dependent on available funds and eligibility review.</p>
 
-    <button onclick="closeInfo()" style="padding:16px 28px; font-size:18px;">
-      Close
-    </button>
+  <p>For more information, email us at <strong>info@publife.org</strong></p>
 
-  </div>
+</div>
 
-  <script>
-    function openInfo() {
-      document.getElementById("info").style.display = "block";
-    }
+<script>
+function openInfo() {
+  document.getElementById("info").style.display = "block";
+}
 
-    function closeInfo() {
-      document.getElementById("info").style.display = "none";
-    }
-  </script>
+function closeInfo() {
+  document.getElementById("info").style.display = "none";
+}
+</script>
 
 </body>
 </html>
