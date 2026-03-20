@@ -18,6 +18,7 @@
       text-align: center;
     }
 
+    /* BACKGROUND */
     body::before {
       content: "";
       position: fixed;
@@ -34,6 +35,7 @@
       z-index: -1;
     }
 
+    /* BANNER */
     .banner {
       background: #e8e1d3;
       color: black;
@@ -43,8 +45,9 @@
       letter-spacing: 2px;
     }
 
+    /* HERO (LOCKED POSTER) */
     .container {
-      min-height: 100vh;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -60,6 +63,7 @@
       margin-bottom: 8px;
     }
 
+    /* BUTTONS (TIGHT + STRONG) */
     .btn {
       display: block;
       width: 100%;
@@ -83,14 +87,14 @@
       color: white;
     }
 
-    .apply {
-      background: #e8e1d3;
-      color: black;
-    }
-
     .events {
       border: 3px solid #888;
       color: white;
+    }
+
+    .apply {
+      background: #e8e1d3;
+      color: black;
     }
 
     .footer {
@@ -116,7 +120,7 @@
       border: 2px solid #e1306c;
     }
 
-    /* INFO SECTION */
+    /* INFO SECTION (separate scroll area) */
     .info-section {
       padding: 60px 20px;
       max-width: 700px;
@@ -159,7 +163,6 @@
 
   </div>
 
-  <!-- INFO SECTION -->
   <div id="info" class="info-section">
 
     <h2>About PubLife</h2>
