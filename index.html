@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>PubLife</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
 <style>
 
@@ -26,14 +26,14 @@ body::before {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 130%;
-  height: 130%;
+  width: 150%;
+  height: 150%;
   background-image: url('inverted logo.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   transform: translate(-50%, -50%);
-  opacity: 0.04;
+  opacity: 0.05;
   z-index: -1;
 }
 
@@ -41,48 +41,55 @@ body::before {
 .banner {
   background: #e8e1d3;
   color: black;
-  padding: 14px;
-  font-size: 15px;
+  padding: 16px;
+  font-size: 16px;
   letter-spacing: 2px;
 }
 
-/* HERO (FIXED FOR INSTAGRAM) */
+/* HERO */
 .container {
   min-height: 100vh;
-  max-width: 420px;
-  margin: 0 auto;
-  padding: 30px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 16px;
+  max-width: 520px;
+  margin: auto;
 }
 
-/* LOGO (HIGHER + STRONGER) */
+/* LOGO */
 .logo {
   width: 100%;
-  max-width: 280px;
-  margin: 0 auto 18px;
+  max-width: 460px;
+  margin-bottom: 16px;
 }
 
-/* MISSION (PRIMARY ELEMENT NOW) */
+/* MISSION (STRONGER) */
 .mission {
   font-size: 20px;
-  line-height: 1.6;
+  line-height: 1.5;
+  font-weight: 500;
   margin-bottom: 24px;
-  color: #ffffff;
+  max-width: 460px;
 }
 
 /* BUTTONS */
 .btn {
   display: block;
   width: 100%;
-  padding: 18px;
-  font-size: 18px;
-  border-radius: 6px;
+  max-width: 460px;
+  padding: 22px;
+  font-size: 20px;
+  border-radius: 10px;
+  letter-spacing: 1px;
   margin: 6px 0;
   text-decoration: none;
-  letter-spacing: 1px;
 }
 
 .learn {
   border: 2px solid white;
+  background: rgba(0,0,0,0.5);
   color: white;
 }
 
@@ -92,7 +99,7 @@ body::before {
 }
 
 .events {
-  border: 2px solid #666;
+  border: 2px solid #777;
   color: white;
 }
 
@@ -107,56 +114,77 @@ body::before {
   font-size: 14px;
 }
 
-/* SOCIAL BUTTONS (CLEAN + REAL LOOK) */
+/* SOCIAL ICONS (FINAL FIX) */
 .socials {
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .socials a {
   display: inline-block;
-  margin: 6px 4px;
-  padding: 10px 18px;
-  font-size: 14px;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: 500;
+  margin: 6px;
 }
 
-.fb {
-  background: #1877f2;
-  color: white;
-}
-
-.ig {
-  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
-  color: white;
+.socials img {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
 }
 
 /* INFO SECTION */
 .info-section {
-  padding: 100px 20px;
+  padding: 90px 20px;
   max-width: 700px;
   margin: auto;
-  font-size: 16px;
   line-height: 1.7;
+  font-size: 17px;
 }
 
 .info-section h2 {
   margin-top: 40px;
 }
 
-/* HANDBOOK CTA */
+/* HANDBOOK */
 .handbook {
-  display: block;
-  margin: 40px auto 0;
-  padding: 16px;
-  width: 100%;
-  max-width: 320px;
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 24px;
   border: 2px solid #e8e1d3;
   color: #e8e1d3;
   text-decoration: none;
-  border-radius: 6px;
-  font-size: 16px;
+  border-radius: 8px;
+}
+
+/* -------------------- */
+/* DEVICE SCALING FIXES */
+/* -------------------- */
+
+/* Small phones */
+@media (max-width: 380px) {
+  .mission {
+    font-size: 18px;
+  }
+
+  .logo {
+    max-width: 380px;
+  }
+}
+
+/* iPhone / standard mobile */
+@media (min-width: 381px) and (max-width: 600px) {
+  .mission {
+    font-size: 20px;
+  }
+}
+
+/* Larger phones / meta browser stability */
+@media (min-width: 601px) {
+  .container {
+    max-width: 600px;
+  }
+
+  .mission {
+    font-size: 22px;
+  }
 }
 
 </style>
@@ -187,8 +215,12 @@ body::before {
     <a href="mailto:info@publife.org" style="color:white;">info@publife.org</a>
 
     <div class="socials">
-      <a href="https://www.facebook.com/100069530393569/" class="fb">Facebook</a>
-      <a href="https://www.instagram.com/publifekc" class="ig">Instagram</a>
+      <a href="https://www.facebook.com/100069530393569/">
+        <img src="facebook.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/publifekc">
+        <img src="instagram.png" alt="Instagram">
+      </a>
     </div>
   </div>
 
@@ -215,11 +247,14 @@ body::before {
   <h2>How We Sustain This Work</h2>
   <p>Through community events, local partnerships, and direct contributions.</p>
 
-  <h2>Full Handbook</h2>
-  <p>Download the full PubLife Handbook for complete policies and structure.</p>
+  <h2>Our Commitment</h2>
+  <p>We operate with transparency, dignity, and efficiency.</p>
 
-  <a href="PubLife_Handbook.pdf" class="handbook">
-    Download PubLife Handbook
+  <h2>Additional Information</h2>
+  <p>Assistance is not guaranteed and is dependent on eligibility review and available funds.</p>
+
+  <a href="PubLife_Handbook.pdf" class="handbook" download>
+    Download Handbook
   </a>
 
 </div>
