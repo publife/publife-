@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>PubLife</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 
@@ -26,14 +26,14 @@ body::before {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 160%;
-  height: 160%;
+  width: 140%;
+  height: 140%;
   background-image: url('inverted logo.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   transform: translate(-50%, -50%);
-  opacity: 0.06;
+  opacity: 0.05;
   z-index: -1;
 }
 
@@ -41,8 +41,8 @@ body::before {
 .banner {
   background: #e8e1d3;
   color: black;
-  padding: 18px;
-  font-size: 18px;
+  padding: 16px;
+  font-size: 16px;
   letter-spacing: 2px;
 }
 
@@ -54,34 +54,32 @@ body::before {
   justify-content: center;
   align-items: center;
   padding: 20px 16px;
-  max-width: 520px;
+  max-width: 420px;
   margin: auto;
 }
 
 /* LOGO */
 .logo {
   width: 100%;
-  max-width: 420px;
-  margin-bottom: 10px;
+  max-width: 320px;
+  margin-bottom: 16px;
 }
 
-/* MISSION STATEMENT (KEY FIX) */
+/* MISSION (PROMINENT FIX) */
 .mission {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 18px;
-  max-width: 420px;
-  color: #ddd;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 22px;
+  color: #f2f2f2;
 }
 
 /* BUTTONS */
 .btn {
   display: block;
   width: 100%;
-  max-width: 420px;
-  padding: 22px;
-  font-size: 20px;
-  border-radius: 10px;
+  padding: 18px;
+  font-size: 18px;
+  border-radius: 8px;
   letter-spacing: 1px;
   margin: 6px 0;
   text-decoration: none;
@@ -89,7 +87,6 @@ body::before {
 
 .learn {
   border: 2px solid white;
-  background: rgba(0,0,0,0.5);
   color: white;
 }
 
@@ -99,7 +96,7 @@ body::before {
 }
 
 .events {
-  border: 2px solid #777;
+  border: 2px solid #666;
   color: white;
 }
 
@@ -110,55 +107,59 @@ body::before {
 
 /* FOOTER */
 .footer {
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: 14px;
 }
 
-/* SOCIAL BUTTONS (FIXED) */
+/* SOCIALS (CLEAN + LEGIT) */
 .socials {
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .socials a {
   display: inline-block;
-  margin: 5px;
-  padding: 8px 14px;
-  font-size: 14px;
+  margin: 4px;
+  padding: 8px 16px;
+  font-size: 13px;
   text-decoration: none;
-  color: white;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 
 .fb {
-  border: 1px solid #1877f2;
+  background: #1877f2;
+  color: white;
 }
 
 .ig {
-  border: 1px solid #e1306c;
+  background: #e1306c;
+  color: white;
 }
 
-/* INFO SECTION (PROPER SEPARATION) */
+/* INFO SECTION */
 .info-section {
-  padding: 80px 20px;
+  padding: 100px 20px;
   max-width: 700px;
   margin: auto;
   line-height: 1.7;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .info-section h2 {
   margin-top: 40px;
 }
 
-/* HANDBOOK BUTTON */
+/* HANDBOOK (REAL CTA FIX) */
 .handbook {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 14px 24px;
+  display: block;
+  margin: 40px auto 0;
+  padding: 16px;
+  width: 100%;
+  max-width: 320px;
   border: 2px solid #e8e1d3;
   color: #e8e1d3;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 6px;
+  font-size: 16px;
 }
 
 </style>
@@ -174,9 +175,9 @@ body::before {
 
   <img src="Logo.png" class="logo">
 
-  <!-- MISSION STATEMENT FIX -->
   <div class="mission">
-    PubLife exists to serve the ones who serve us. We provide dignified, efficient financial assistance for unforeseen medical expenses to hospitality workers in our community.
+    PubLife exists to serve the ones who serve us.<br><br>
+    We provide dignified, efficient financial assistance for unforeseen medical expenses to hospitality workers in our community.
   </div>
 
   <a href="#info" class="btn learn">LEARN ABOUT PUBLIFE</a>
@@ -223,9 +224,11 @@ body::before {
   <h2>Additional Information</h2>
   <p>Assistance is not guaranteed and is dependent on eligibility review and available funds.</p>
 
-  <!-- HANDBOOK DOWNLOAD -->
-  <a href="PubLife_Handbook.pdf" class="handbook" download>
-    Download Handbook
+  <h2>Full Handbook</h2>
+  <p>For complete policies, eligibility requirements, and operational structure, download the PubLife Handbook.</p>
+
+  <a href="PubLife_Handbook.pdf" class="handbook">
+    Download PubLife Handbook
   </a>
 
 </div>
