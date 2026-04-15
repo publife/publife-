@@ -1,9 +1,176 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Events - PubLife</title>
+<meta charset="UTF-8">
+<title>Events | PubLife</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  color: white;
+  background: black;
+  overflow-x: hidden;
+}
+
+.bg {
+  position: fixed;
+  inset: 0;
+  background: url('inverted logo.png') center center / cover no-repeat;
+  z-index: -3;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: -2;
+}
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px;
+  z-index: 10;
+}
+
+.menu-toggle {
+  font-size: 26px;
+  color: #e8e1d3;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 260px;
+  height: 100%;
+  background: url('neon.png') center/cover no-repeat;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: 0.3s ease;
+  z-index: 9;
+}
+
+.mobile-menu::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+}
+
+.mobile-menu a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 12px;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.mobile-menu.active { left: 0; }
+
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 8;
+}
+
+.menu-backdrop.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.wrapper {
+  padding: 100px 20px 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+a {
+  color: #b08d57;
+  text-decoration: none;
+}
+
+</style>
 </head>
-<body style="background:black; color:white; text-align:center; padding-top:100px; font-family:Georgia;">
-  <h1>Announcements coming soon!</h1>
+
+<body>
+
+<div class="bg"></div>
+<div class="overlay"></div>
+
+<div class="top-bar">
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</div>
+
+<div id="menuBackdrop" class="menu-backdrop" onclick="closeMenu()"></div>
+
+<nav id="mobileMenu" class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="how-it-works.html">How It Works</a>
+  <a href="events.html">Events</a>
+  <a href="apply.html">Apply for Assistance</a>
+  <a href="volunteer.html">Volunteer</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<div class="wrapper">
+
+<h1>Events</h1>
+
+<p>PubLife will host and participate in events that bring the hospitality community together and support the mission.</p>
+
+<p>As we get started, event information will be shared here and through our social channels.</p>
+
+<p>If you or your business would like to be part of an upcoming event, reach out directly.</p>
+
+<p>
+<a href="mailto:event@publife.org">event@publife.org</a>
+</p>
+
+<p>More coming soon.</p>
+
+</div>
+
+<script>
+function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("active");
+  document.getElementById("menuBackdrop").classList.toggle("active");
+}
+
+function closeMenu() {
+  document.getElementById("mobileMenu").classList.remove("active");
+  document.getElementById("menuBackdrop").classList.remove("active");
+}
+</script>
+
 </body>
 </html>
