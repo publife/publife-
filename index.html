@@ -24,14 +24,14 @@ body {
 .bg {
   position: fixed;
   inset: 0;
-  background: url('bar-blur.jpg') center/cover no-repeat;
+  background: url('bar-blur.jpg') center center / cover no-repeat;
   z-index: -3;
 }
 
 .overlay {
   position: fixed;
   inset: 0;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9));
+  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9));
   z-index: -2;
 }
 
@@ -123,18 +123,12 @@ body {
   padding: 20px;
 }
 
-/* 🔴 CONTENT (NO BORDER NOW) */
+/* 🔴 TRUE CENTER COLUMN */
 .content {
   width: 100%;
-  max-width: 460px;
+  max-width: 440px; /* tighter = better visual centering */
   margin: 0 auto;
   text-align: center;
-
-  /* subtle depth without border */
-  background: rgba(0,0,0,0.35);
-  backdrop-filter: blur(4px);
-  border-radius: 16px;
-  padding: 24px 20px;
 }
 
 /* 🔴 HEADLINE */
@@ -147,18 +141,18 @@ body {
 
 /* 🔴 LOGO */
 .logo {
-  width: clamp(160px, 45vw, 280px);
-  margin: 10px auto 18px;
+  width: clamp(150px, 42vw, 260px);
+  margin: 12px auto 18px;
   display: block;
 }
 
-/* 🔴 MISSION (FIXED) */
+/* 🔴 MISSION */
 .mission {
-  font-size: clamp(16px, 3.2vw, 19px);
+  font-size: clamp(16px, 3.2vw, 18px);
   line-height: 1.6;
   margin-bottom: 26px;
   color: #f4f1ea;
-  font-weight: 600; /* 🔥 subtle bold */
+  font-weight: 600;
   text-align: center;
 }
 
