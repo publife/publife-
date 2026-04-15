@@ -123,20 +123,18 @@ body {
   padding: 20px;
 }
 
-/* 🔴 FRAME (THIS FIXES ALIGNMENT + BORDER EFFECT) */
-.frame {
+/* 🔴 CONTENT (NO BORDER NOW) */
+.content {
   width: 100%;
-  max-width: 480px;
-  padding: 24px 20px 28px;
-  border-radius: 18px;
-
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(6px);
-
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 0 60px rgba(0,0,0,0.6);
-
+  max-width: 460px;
+  margin: 0 auto;
   text-align: center;
+
+  /* subtle depth without border */
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(4px);
+  border-radius: 16px;
+  padding: 24px 20px;
 }
 
 /* 🔴 HEADLINE */
@@ -154,12 +152,14 @@ body {
   display: block;
 }
 
-/* 🔴 MISSION */
+/* 🔴 MISSION (FIXED) */
 .mission {
-  font-size: clamp(15px, 3.2vw, 18px);
+  font-size: clamp(16px, 3.2vw, 19px);
   line-height: 1.6;
   margin-bottom: 26px;
   color: #f4f1ea;
+  font-weight: 600; /* 🔥 subtle bold */
+  text-align: center;
 }
 
 /* 🔴 BUTTONS */
@@ -194,6 +194,7 @@ body {
 .footer {
   margin-top: 20px;
   font-size: 14px;
+  text-align: center;
 }
 
 .footer a {
@@ -245,7 +246,7 @@ body {
 
 <!-- HERO -->
 <div class="hero-wrap">
-  <div class="frame">
+  <div class="content">
 
     <div class="headline">
       100% of prelaunch donations go directly to hospitality workers.
