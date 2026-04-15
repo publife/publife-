@@ -123,10 +123,10 @@ body {
   padding: 20px;
 }
 
-/* 🔴 TRUE CENTER COLUMN */
+/* 🔴 CONTENT */
 .content {
   width: 100%;
-  max-width: 440px; /* tighter = better visual centering */
+  max-width: 420px;
   margin: 0 auto;
   text-align: center;
 }
@@ -134,26 +134,29 @@ body {
 /* 🔴 HEADLINE */
 .headline {
   font-size: clamp(28px, 7vw, 36px);
-  line-height: 1.25;
-  margin-bottom: 18px;
+  line-height: 1.2;
+  margin-bottom: 20px;
   font-weight: bold;
+  letter-spacing: 0.3px;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* 🔴 LOGO */
 .logo {
-  width: clamp(150px, 42vw, 260px);
-  margin: 12px auto 18px;
+  width: clamp(150px, 42vw, 240px);
+  margin: 14px auto 20px;
   display: block;
 }
 
 /* 🔴 MISSION */
 .mission {
   font-size: clamp(16px, 3.2vw, 18px);
-  line-height: 1.6;
-  margin-bottom: 26px;
+  line-height: 1.65;
+  margin-bottom: 28px;
   color: #f4f1ea;
   font-weight: 600;
-  text-align: center;
 }
 
 /* 🔴 BUTTONS */
@@ -163,30 +166,38 @@ body {
   padding: 18px;
   font-size: 18px;
   border-radius: 12px;
-  margin: 10px 0;
+  margin: 12px 0;
   text-decoration: none;
   text-align: center;
+  transition: all 0.2s ease;
 }
 
+/* 🔴 DONATE (PRIMARY CTA) */
 .donate {
   background: #b08d57;
   color: black;
   font-weight: bold;
+  box-shadow: 0 0 12px rgba(176,141,87,0.4);
 }
 
+.donate:active {
+  transform: scale(0.97);
+  box-shadow: 0 0 6px rgba(176,141,87,0.3);
+}
+
+/* 🔴 APPLY */
 .apply {
   background: #e8e1d3;
   color: black;
 }
 
-.events {
-  border: 2px solid rgba(255,255,255,0.4);
-  color: white;
+.apply:active {
+  transform: scale(0.97);
 }
 
 /* 🔴 FOOTER */
 .footer {
-  margin-top: 20px;
+  margin-top: 24px;
   font-size: 14px;
   text-align: center;
 }
@@ -198,10 +209,10 @@ body {
 
 /* 🔴 SOCIALS */
 .socials {
-  margin-top: 14px;
+  margin-top: 16px;
   display: flex;
   justify-content: center;
-  gap: 18px;
+  gap: 20px;
 }
 
 .socials img {
@@ -233,6 +244,7 @@ body {
 <nav id="mobileMenu" class="mobile-menu">
   <a href="about.html">About</a>
   <a href="how-it-works.html">How It Works</a>
+  <a href="events.html">Events</a>
   <a href="apply.html">Apply for Assistance</a>
   <a href="volunteer.html">Volunteer</a>
   <a href="contact.html">Contact</a>
@@ -255,7 +267,6 @@ body {
 
     <a href="https://gofund.me/35bd90c1a" class="btn donate">DONATE NOW</a>
     <a href="apply.html" class="btn apply">APPLY HERE</a>
-    <a href="events.html" class="btn events">EVENTS</a>
 
     <div class="footer">
       Kansas City, MO<br>
