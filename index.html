@@ -114,13 +114,13 @@ body {
   pointer-events: all;
 }
 
-/* 🔴 HERO */
 .hero-wrap {
-  min-height: 100vh;
+  min-height: 100dvh; /* ✅ fixes mobile cut-off */
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 24px 20px 32px;
+  box-sizing: border-box;
 }
 
 /* 🔴 CONTENT */
