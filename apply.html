@@ -1,9 +1,210 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Apply - PubLife</title>
+<meta charset="UTF-8">
+<title>Apply | PubLife</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* GLOBAL */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  color: white;
+  background: black;
+  overflow-x: hidden;
+}
+
+/* BACKGROUND */
+.bg {
+  position: fixed;
+  inset: 0;
+  background: url('inverted logo.png') center center / cover no-repeat;
+  z-index: -3;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: -2;
+}
+
+/* NAV */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px;
+  z-index: 10;
+}
+
+.menu-toggle {
+  font-size: 26px;
+  color: #e8e1d3;
+  cursor: pointer;
+}
+
+/* SIDE MENU */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 260px;
+  height: 100%;
+  background: url('neon.png') center/cover no-repeat;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: 0.3s ease;
+  z-index: 9;
+}
+
+.mobile-menu::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+}
+
+.mobile-menu a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 12px;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.mobile-menu.active { left: 0; }
+
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 8;
+}
+
+.menu-backdrop.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* CONTENT */
+.wrapper {
+  padding: 100px 20px 40px;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 1.7;
+  margin-bottom: 18px;
+  font-size: 16px;
+}
+
+/* BUTTON */
+.apply-btn {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 30px auto 0;
+  padding: 16px;
+  background: #e8e1d3;
+  color: black;
+  text-align: center;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.apply-btn:active {
+  transform: scale(0.97);
+}
+
+a {
+  color: #b08d57;
+}
+
+</style>
 </head>
-<body style="background:black; color:white; text-align:center; padding-top:100px; font-family:Georgia;">
-  <h1>Applications will be available at official launch.</h1>
+
+<body>
+
+<div class="bg"></div>
+<div class="overlay"></div>
+
+<!-- NAV -->
+<div class="top-bar">
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</div>
+
+<div id="menuBackdrop" class="menu-backdrop" onclick="closeMenu()"></div>
+
+<nav id="mobileMenu" class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="how-it-works.html">How It Works</a>
+  <a href="events.html">Events</a>
+  <a href="apply.html">Apply for Assistance</a>
+  <a href="volunteer.html">Volunteer</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- CONTENT -->
+<div class="wrapper">
+
+<h1>Apply for Assistance</h1>
+
+<p>If you are facing a medical expense and need support, you can apply here. All applications are handled with care, confidentiality, and respect.</p>
+
+<p>Every submission is reviewed within 24 hours. Our goal is to respond quickly so you are not left waiting during a difficult time.</p>
+
+<p>You do not need to have everything prepared before applying. Share what you can now. If additional information is needed, we will follow up directly.</p>
+
+<p>All information submitted is kept strictly confidential and used only for the purpose of evaluating your request.</p>
+
+<p>You are not alone in this. We are here to help.</p>
+
+<p>Please submit only one application per request. If your situation changes or you need to provide additional information, you can update us directly.</p>
+
+<p>For any questions, concerns, or corrections to your application, you can email us at 
+<a href="mailto:apply@publife.org">apply@publife.org</a>.
+</p>
+
+<a href="YOUR-FORM-LINK-HERE" class="apply-btn">Apply Now</a>
+
+</div>
+
+<script>
+function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("active");
+  document.getElementById("menuBackdrop").classList.toggle("active");
+}
+
+function closeMenu() {
+  document.getElementById("mobileMenu").classList.remove("active");
+  document.getElementById("menuBackdrop").classList.remove("active");
+}
+</script>
+
 </body>
 </html>
