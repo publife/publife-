@@ -30,7 +30,7 @@ body {
   z-index: -4;
 }
 
-/* 🔴 COLOR TONE LAYER (NEW – THIS IS THE MAGIC) */
+/* 🔴 COLOR TONE */
 .color-wash {
   position: fixed;
   width: 100%;
@@ -49,7 +49,7 @@ body {
   z-index: -2;
 }
 
-/* 🔴 GRADIENT FADE (NEW – CONTROLS READABILITY) */
+/* 🔴 GRADIENT FADE */
 .gradient-fade {
   position: fixed;
   width: 100%;
@@ -87,25 +87,27 @@ body::after {
   width: 100%;
   padding: 14px 18px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   z-index: 10;
 }
 
+/* 🔴 HAMBURGER FIX (SHIFT LEFT + SAFE AREA) */
 .menu-toggle {
   font-size: 26px;
   color: #e8e1d3;
   cursor: pointer;
+  margin-right: 8px;
 }
 
-/* 🔴 MOBILE MENU */
+/* 🔴 MOBILE MENU WITH NEON BG */
 .mobile-menu {
   position: fixed;
   top: 0;
   right: -100%;
   width: 100%;
   height: 100%;
-  background: black;
+  background: url('neon-bg.jpg') center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -114,13 +116,28 @@ body::after {
   z-index: 9;
 }
 
-.mobile-menu a {
-  color: white;
-  font-size: 24px;
-  margin: 15px 0;
-  text-decoration: none;
+/* 🔴 MENU OVERLAY FOR READABILITY */
+.mobile-menu::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
+  top: 0;
+  left: 0;
 }
 
+/* 🔴 MENU LINKS */
+.mobile-menu a {
+  position: relative;
+  color: white;
+  font-size: 26px;
+  margin: 16px 0;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+/* 🔴 ACTIVE MENU */
 .mobile-menu.active {
   right: 0;
 }
@@ -180,7 +197,7 @@ body::after {
   font-size: 17px;
 }
 
-/* 🔴 DONATE (STRONGER) */
+/* 🔴 DONATE */
 .donate {
   background: #b08d57;
   color: black;
@@ -190,11 +207,6 @@ body::after {
 }
 
 /* 🔴 SECONDARY */
-.learn {
-  border: 2px solid white;
-  color: white;
-}
-
 .apply {
   background: #e8e1d3;
   color: black;
@@ -246,7 +258,6 @@ body::after {
 
 <!-- NAV -->
 <div class="top-bar">
-  <div></div>
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </div>
 
@@ -274,7 +285,6 @@ body::after {
     </div>
 
     <a href="https://gofund.me/35bd90c1a" class="btn donate">DONATE NOW</a>
-    <a href="about.html" class="btn learn">LEARN ABOUT PUBLIFE</a>
     <a href="apply.html" class="btn apply">APPLY HERE</a>
     <a href="events.html" class="btn events">EVENTS</a>
 
