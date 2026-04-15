@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>How It Works | PubLife</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* GLOBAL */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  color: white;
+  background: black;
+  overflow-x: hidden;
+}
+
+/* BACKGROUND */
+.bg {
+  position: fixed;
+  inset: 0;
+  background: url('inverted logo.png') center center / cover no-repeat;
+  z-index: -3;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: -2;
+}
+
+/* NAV */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px;
+  z-index: 10;
+}
+
+.menu-toggle {
+  font-size: 26px;
+  color: #e8e1d3;
+  cursor: pointer;
+}
+
+/* SIDE MENU */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 260px;
+  height: 100%;
+  background: url('neon.png') center/cover no-repeat;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: 0.3s ease;
+  z-index: 9;
+}
+
+.mobile-menu::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+}
+
+.mobile-menu a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 12px;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.mobile-menu.active { left: 0; }
+
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 8;
+}
+
+.menu-backdrop.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* CONTENT */
+.wrapper {
+  padding: 100px 20px 40px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.sub {
+  text-align: center;
+  color: #cfc7b5;
+  margin-bottom: 30px;
+}
+
+p {
+  line-height: 1.7;
+  margin-bottom: 18px;
+  font-size: 16px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div class="overlay"></div>
+
+<!-- NAV -->
+<div class="top-bar">
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</div>
+
+<div id="menuBackdrop" class="menu-backdrop" onclick="closeMenu()"></div>
+
+<nav id="mobileMenu" class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="how-it-works.html">How It Works</a>
+  <a href="events.html">Events</a>
+  <a href="apply.html">Apply for Assistance</a>
+  <a href="volunteer.html">Volunteer</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- CONTENT -->
+<div class="wrapper">
+
+<h1>How It Works</h1>
+<div class="sub">Kansas City Metropolitan Area</div>
+
+<p>PubLife is built to operate as a true nonprofit, with a strong focus on directing the majority of funds toward those in need. Our model targets allocating 80% to 85% of all funds raised directly to medical grants for hospitality workers, while keeping operating costs low and intentional.</p>
+
+<p>When an application is approved, funds are distributed directly to the provider or institution associated with the medical expense whenever possible. This ensures that support is used as intended and reaches the right place without delay.</p>
+
+<p>PubLife operates as a 501(c)(3) nonprofit with oversight from a Board of Directors. The Executive Director reviews applications and has the authority to approve or deny requests based on established criteria. All decisions are subject to Board review, with a defined window for oversight, additional questions, or reversal if necessary.</p>
+
+<p>To protect the integrity of the process, a strict conflict of interest policy is in place. Every application is handled with consistency, fairness, and respect for the individuals seeking support.</p>
+
+<p>At its core, PubLife is built to respond when it matters most, providing timely and dignified support to the people who keep our communities running every day.</p>
+
+</div>
+
+<script>
+function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("active");
+  document.getElementById("menuBackdrop").classList.toggle("active");
+}
+
+function closeMenu() {
+  document.getElementById("mobileMenu").classList.remove("active");
+  document.getElementById("menuBackdrop").classList.remove("active");
+}
+</script>
+
+</body>
+</html>
