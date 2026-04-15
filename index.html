@@ -79,27 +79,26 @@ body::after {
   transform: translate(-50%, -50%);
   opacity: 0.05;
   z-index: 0;
-}
 
+}
 /* 🔴 TOP BAR */
 .top-bar {
   position: fixed;
   width: 100%;
   padding: 14px 18px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start; /* ⬅️ FORCE LEFT */
   align-items: center;
   z-index: 10;
 }
 
-/* 🔴 HAMBURGER FIX (SHIFT LEFT + SAFE AREA) */
+/* 🔴 HAMBURGER */
 .menu-toggle {
-  font-size: 26px;
+  font-size: 28px;
   color: #e8e1d3;
   cursor: pointer;
-  margin-right: 8px;
+  margin-left: 4px; /* small breathing room from edge */
 }
-
 /* 🔴 MOBILE MENU WITH NEON BG */
 .mobile-menu {
   position: fixed;
