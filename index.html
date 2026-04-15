@@ -8,6 +8,11 @@
 
 <style>
 
+/* ✅ GLOBAL FIX (prevents overflow everywhere) */
+* {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -60,7 +65,6 @@ body {
   height: 100%;
   background: url('neon.png') center/cover no-repeat;
   padding: 80px 20px;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -114,19 +118,19 @@ body {
   pointer-events: all;
 }
 
+/* 🔴 HERO */
 .hero-wrap {
-  min-height: 100dvh; /* ✅ fixes mobile cut-off */
+  min-height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 24px 20px 32px;
-  box-sizing: border-box;
 }
 
-/* 🔴 CONTENT */
+/* 🔴 CONTENT (tightened center) */
 .content {
   width: 100%;
-  max-width: 420px;
+  max-width: 380px;
   margin: 0 auto;
   text-align: center;
 }
@@ -138,7 +142,7 @@ body {
   margin-bottom: 20px;
   font-weight: bold;
   letter-spacing: 0.3px;
-  max-width: 380px;
+  max-width: 360px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -159,20 +163,21 @@ body {
   font-weight: 600;
 }
 
-/* 🔴 BUTTONS */
+/* 🔴 BUTTONS (FIXED) */
 .btn {
   display: block;
   width: 100%;
-  padding: 18px;
-  font-size: 18px;
+  max-width: 340px; /* tighter = no overflow */
+  margin: 12px auto;
+  padding: 16px;
+  font-size: 17px;
   border-radius: 12px;
-  margin: 12px 0;
   text-decoration: none;
   text-align: center;
   transition: all 0.2s ease;
 }
 
-/* 🔴 DONATE (PRIMARY CTA) */
+/* 🔴 DONATE */
 .donate {
   background: #b08d57;
   color: black;
@@ -182,7 +187,6 @@ body {
 
 .donate:active {
   transform: scale(0.97);
-  box-shadow: 0 0 6px rgba(176,141,87,0.3);
 }
 
 /* 🔴 APPLY */
