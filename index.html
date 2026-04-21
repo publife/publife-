@@ -8,14 +8,9 @@
 
 <style>
 
-/* ✅ GLOBAL FIX (prevents overflow everywhere) */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -25,7 +20,7 @@ body {
   overflow-x: hidden;
 }
 
-/* 🔴 BACKGROUND */
+/* BACKGROUND */
 .bg {
   position: fixed;
   inset: 0;
@@ -40,7 +35,7 @@ body {
   z-index: -2;
 }
 
-/* 🔴 NAV */
+/* NAV */
 .top-bar {
   position: fixed;
   top: 0;
@@ -56,7 +51,7 @@ body {
   cursor: pointer;
 }
 
-/* 🔴 SIDE MENU */
+/* SIDE MENU */
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -102,7 +97,7 @@ body {
   left: 0;
 }
 
-/* 🔴 BACKDROP */
+/* BACKDROP */
 .menu-backdrop {
   position: fixed;
   inset: 0;
@@ -118,7 +113,7 @@ body {
   pointer-events: all;
 }
 
-/* 🔴 HERO */
+/* HERO */
 .hero-wrap {
   min-height: 100dvh;
   display: flex;
@@ -127,7 +122,7 @@ body {
   padding: 24px 20px 32px;
 }
 
-/* 🔴 CONTENT (tightened center) */
+/* CONTENT */
 .content {
   width: 100%;
   max-width: 380px;
@@ -135,26 +130,22 @@ body {
   text-align: center;
 }
 
-/* 🔴 HEADLINE */
+/* HEADLINE */
 .headline {
   font-size: clamp(28px, 7vw, 36px);
   line-height: 1.2;
   margin-bottom: 20px;
   font-weight: bold;
-  letter-spacing: 0.3px;
-  max-width: 360px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-/* 🔴 LOGO */
+/* LOGO */
 .logo {
   width: clamp(150px, 42vw, 240px);
   margin: 14px auto 20px;
   display: block;
 }
 
-/* 🔴 MISSION */
+/* MISSION */
 .mission {
   font-size: clamp(16px, 3.2vw, 18px);
   line-height: 1.65;
@@ -163,11 +154,11 @@ body {
   font-weight: 600;
 }
 
-/* 🔴 BUTTONS (FIXED) */
+/* BUTTONS */
 .btn {
   display: block;
   width: 100%;
-  max-width: 340px; /* tighter = no overflow */
+  max-width: 340px;
   margin: 12px auto;
   padding: 16px;
   font-size: 17px;
@@ -177,7 +168,7 @@ body {
   transition: all 0.2s ease;
 }
 
-/* 🔴 DONATE */
+/* DONATE */
 .donate {
   background: #b08d57;
   color: black;
@@ -185,21 +176,13 @@ body {
   box-shadow: 0 0 12px rgba(176,141,87,0.4);
 }
 
-.donate:active {
-  transform: scale(0.97);
-}
-
-/* 🔴 APPLY */
+/* APPLY */
 .apply {
   background: #e8e1d3;
   color: black;
 }
 
-.apply:active {
-  transform: scale(0.97);
-}
-
-/* 🔴 FOOTER */
+/* FOOTER */
 .footer {
   margin-top: 24px;
   font-size: 14px;
@@ -209,14 +192,9 @@ body {
 .footer a {
   color: #b08d57;
   text-decoration: underline;
-  font-weight: 500;
 }
 
-  .footer a:hover {
-  opacity: 0.8;
-}
-  
-/* 🔴 SOCIALS */
+/* SOCIALS */
 .socials {
   margin-top: 16px;
   display: flex;
@@ -226,13 +204,6 @@ body {
 
 .socials img {
   width: 42px;
-}
-
-/* 🔴 MOBILE */
-@media (max-width: 480px) {
-  .headline {
-    font-size: 30px;
-  }
 }
 
 </style>
@@ -251,6 +222,7 @@ body {
 <div id="menuBackdrop" class="menu-backdrop" onclick="closeMenu()"></div>
 
 <nav id="mobileMenu" class="mobile-menu">
+  <a href="donate.html">Donate</a>
   <a href="about.html">About</a>
   <a href="how-it-works.html">How It Works</a>
   <a href="events.html">Events</a>
@@ -264,17 +236,18 @@ body {
   <div class="content">
 
     <div class="headline">
-      100% of prelaunch donations go directly to hospitality workers.
+      Medical bill relief for hospitality workers.
     </div>
 
     <img src="Logo.png" class="logo">
 
     <div class="mission">
-      PubLife exists to serve the ones who serve us.<br><br>
-      We provide dignified, efficient financial assistance for unforeseen medical expenses to hospitality workers in our community.
+      PubLife provides direct financial assistance for hospitality workers facing medical emergencies.
     </div>
 
-    <a href="https://gofund.me/35bd90c1a" class="btn donate">DONATE NOW</a>
+    <!-- UPDATED BUTTON -->
+    <a href="donate.html" class="btn donate">DONATE NOW</a>
+
     <a href="apply.html" class="btn apply">APPLY HERE</a>
 
     <div class="footer">
