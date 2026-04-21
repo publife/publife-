@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Donate | PubLife</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  color: white;
+  background: black;
+}
+
+/* BACKGROUND */
+.bg {
+  position: fixed;
+  inset: 0;
+  background: url('bar-blur.jpg') center center / cover no-repeat;
+  z-index: -3;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+  z-index: -2;
+}
+
+/* CONTENT */
+.container {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 100px 20px 40px;
+  text-align: center;
+}
+
+/* HEADLINE */
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* TEXT */
+.text {
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #f4f1ea;
+}
+
+/* BUTTONS */
+.btn {
+  display: block;
+  width: 100%;
+  margin: 12px auto;
+  padding: 16px;
+  font-size: 17px;
+  border-radius: 12px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* ZEFFY */
+.zeffy {
+  background: #6c63ff;
+  color: white;
+}
+
+/* GOFUNDME */
+.gfm {
+  background: #02a95c;
+  color: white;
+}
+
+/* VENMO */
+.venmo {
+  background: #3d95ce;
+  color: white;
+}
+
+/* BACK LINK */
+.back {
+  margin-top: 30px;
+  display: inline-block;
+  color: #b08d57;
+  text-decoration: underline;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div class="overlay"></div>
+
+<div class="container">
+
+  <h1>Support PubLife</h1>
+
+  <div class="text">
+    We’ve partnered with Zeffy to ensure that <strong>100% of your donation goes directly to helping hospitality workers</strong> facing medical emergencies.
+    <br><br>
+    Zeffy is a secure, fee-free platform built specifically for nonprofits.
+    <br><br>
+    For those who prefer, we also offer GoFundMe and Venmo as alternative ways to give.
+  </div>
+
+  <a href="https://www.zeffy.com/en-US/donation-form/help-publife-support-hospitality-workers-with-medical-costs" class="btn zeffy">
+    Donate with Zeffy (No Fees)
+  </a>
+
+  <a href="https://gofund.me/35bd90c1a" class="btn gfm">
+    Donate with GoFundMe
+  </a>
+
+  <a href="https://venmo.com/YOUR-USERNAME" class="btn venmo">
+    Donate with Venmo
+  </a>
+
+  <a href="index.html" class="back">← Back to Home</a>
+
+</div>
+
+</body>
+</html>
