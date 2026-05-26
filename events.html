@@ -2,34 +2,45 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Events | PubLife</title>
+<title>PubLife Presents: | PubLife</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-* { box-sizing: border-box; }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
   font-family: 'Georgia', serif;
   color: white;
-  background: black;
+  background: #050505;
   overflow-x: hidden;
 }
 
-.bg {
-  position: fixed;
-  inset: 0;
-  background: url('inverted logo.png') center center / cover no-repeat;
-  z-index: -3;
+/* HERO SECTION */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.15) 0%,
+      rgba(0,0,0,0.45) 45%,
+      rgba(0,0,0,0.88) 75%,
+      #050505 100%
+    ),
+    url('presents-hero.png') center top / cover no-repeat;
 }
 
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  z-index: -2;
-}
+/* TOP BAR */
 
 .top-bar {
   position: fixed;
@@ -37,14 +48,16 @@ body {
   left: 0;
   width: 100%;
   padding: 16px;
-  z-index: 10;
+  z-index: 100;
 }
 
 .menu-toggle {
-  font-size: 26px;
-  color: #e8e1d3;
+  font-size: 28px;
+  color: #ffffff;
   cursor: pointer;
 }
+
+/* MOBILE MENU */
 
 .mobile-menu {
   position: fixed;
@@ -52,42 +65,51 @@ body {
   left: -300px;
   width: 260px;
   height: 100%;
-  background: url('neon.png') center/cover no-repeat;
+  background: url('neon.jpg') center center / cover no-repeat;
   padding: 80px 20px;
   display: flex;
   flex-direction: column;
   gap: 12px;
   transition: 0.3s ease;
-  z-index: 9;
+  z-index: 99;
 }
 
 .mobile-menu::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.92);
 }
 
 .mobile-menu a {
   position: relative;
-  color: white;
+  color: #b08d57;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
   padding: 12px;
   border-radius: 8px;
   z-index: 1;
+  transition: 0.2s ease;
 }
 
-.mobile-menu.active { left: 0; }
+.mobile-menu a:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+/* MENU BACKDROP */
 
 .menu-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.45);
   opacity: 0;
   pointer-events: none;
   transition: 0.3s;
-  z-index: 8;
+  z-index: 98;
 }
 
 .menu-backdrop.active {
@@ -95,27 +117,212 @@ body {
   pointer-events: all;
 }
 
-.wrapper {
-  padding: 100px 20px 40px;
-  max-width: 600px;
+/* HERO CONTENT */
+
+.hero-content {
+  max-width: 520px;
   margin: 0 auto;
+  padding:
+    120px 24px
+    100px;
   text-align: center;
 }
 
-h1 {
-  font-size: 28px;
-  margin-bottom: 20px;
+/* HEADLINES */
+
+.hero-title {
+  font-size: clamp(42px, 10vw, 68px);
+  line-height: 1.1;
+  margin-bottom: 12px;
+  font-weight: bold;
+  text-shadow: 0 4px 14px rgba(0,0,0,0.55);
 }
 
-p {
-  line-height: 1.7;
-  margin-bottom: 20px;
-  font-size: 16px;
+.hero-title span {
+  color: #b08d57;
 }
 
-a {
+.hero-text {
+  font-size: 21px;
+  line-height: 1.8;
+  color: #f3f0ea;
+  margin-top: 36px;
+  margin-bottom: 42px;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.55);
+}
+
+/* CTA BUTTON */
+
+.hero-btn {
+  display: inline-block;
+  background: #b08d57;
+  color: black;
+  text-decoration: none;
+  padding: 18px 34px;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 0 18px rgba(176,141,87,0.28);
+  transition: 0.2s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* MAIN CONTENT */
+
+.content {
+  background: #050505;
+  padding: 70px 24px 90px;
+}
+
+/* SECTION */
+
+.section {
+  max-width: 680px;
+  margin: 0 auto 80px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 34px;
+}
+
+.section-title h2 {
+  margin: 0;
+  color: #b08d57;
+  font-size: 34px;
+}
+
+.section-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(176,141,87,0.5);
+}
+
+/* COMING SOON */
+
+.coming-soon {
+  text-align: center;
+  padding: 40px 20px;
+  border: 1px solid rgba(176,141,87,0.2);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.02);
+}
+
+.coming-soon h3 {
+  margin-top: 0;
+  color: #b08d57;
+  font-size: 30px;
+}
+
+.coming-soon p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #e8e1d3;
+}
+
+/* PARTNER SECTION */
+
+.partner-box {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(12,12,12,1),
+      rgba(18,18,18,1)
+    );
+  border: 1px solid rgba(176,141,87,0.16);
+  border-radius: 18px;
+  padding: 40px 28px;
+  text-align: center;
+}
+
+.partner-box h3 {
+  margin-top: 0;
+  font-size: 32px;
+  color: white;
+}
+
+.partner-box p {
+  color: #e8e1d3;
+  line-height: 1.8;
+  font-size: 18px;
+  margin-bottom: 28px;
+}
+
+.partner-btn {
+  display: inline-block;
+  padding: 14px 26px;
+  border: 1px solid #b08d57;
   color: #b08d57;
   text-decoration: none;
+  border-radius: 10px;
+  transition: 0.2s ease;
+}
+
+.partner-btn:hover {
+  background: rgba(176,141,87,0.08);
+}
+
+/* FOOTER */
+
+.footer {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 240px;
+  max-width: 80%;
+  margin-bottom: 20px;
+}
+
+.footer p {
+  margin: 10px 0;
+  color: #e8e1d3;
+  line-height: 1.7;
+}
+
+.footer a {
+  color: #b08d57;
+  text-decoration: none;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.socials img {
+  width: 42px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .hero-content {
+    padding-top: 110px;
+  }
+
+  .hero-title {
+    font-size: 52px;
+  }
+
+  .hero-text {
+    font-size: 18px;
+  }
+
+  .section-title h2 {
+    font-size: 28px;
+  }
+
 }
 
 </style>
@@ -123,44 +330,142 @@ a {
 
 <body>
 
-<div class="bg"></div>
-<div class="overlay"></div>
+<!-- TOP BAR -->
 
 <div class="top-bar">
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </div>
 
+<!-- BACKDROP -->
+
 <div id="menuBackdrop" class="menu-backdrop" onclick="closeMenu()"></div>
 
+<!-- MOBILE MENU -->
+
 <nav id="mobileMenu" class="mobile-menu">
+
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="how-it-works.html">How It Works</a>
-  <a href="events.html">Events</a>
+  <a href="events.html">PubLife Presents:</a>
+  <a href="partners.html">PubLife Partners</a>
   <a href="apply.html">Apply for Assistance</a>
   <a href="volunteer.html">Volunteer</a>
   <a href="contact.html">Contact</a>
+
 </nav>
 
-<div class="wrapper">
+<!-- HERO -->
 
-<h1>Events</h1>
+<section class="hero">
 
-<p>PubLife will host and participate in events that bring the hospitality community together and support the mission.</p>
+  <div class="hero-content">
 
-<p>As we get started, event information will be shared here and through our social channels.</p>
+    <div class="hero-title">
+      Community events.<br>
+      Real impact.<br>
+      <span>Stronger together.</span>
+    </div>
 
-<p>If you or your business would like to be part of an upcoming event, reach out directly.</p>
+    <div class="hero-text">
+      PubLife Presents: brings the hospitality community together through events, fundraisers, and experiences that support our mission and uplift those who give so much.
+    </div>
 
-<p>
-<a href="mailto:event@publife.org">events@publife.org</a>
-</p>
+    <a href="#events" class="hero-btn">
+      UPCOMING EVENTS
+    </a>
 
-<p>More coming soon.</p>
+  </div>
 
-</div>
+</section>
+
+<!-- CONTENT -->
+
+<section id="events" class="content">
+
+  <!-- EVENTS SECTION -->
+
+  <div class="section">
+
+    <div class="section-title">
+      <h2>Upcoming Events</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="coming-soon">
+
+      <h3>More Events Coming Soon</h3>
+
+      <p>
+        Follow PubLife on social media for announcements, partnerships, and upcoming event releases.
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- PARTNER SECTION -->
+
+  <div class="section">
+
+    <div class="partner-box">
+
+      <h3>Partner With PubLife</h3>
+
+      <p>
+        Interested in hosting an event, sponsoring a fundraiser, or collaborating with PubLife Presents:? We’d love to build something meaningful together.
+      </p>
+
+      <a href="contact.html" class="partner-btn">
+        CONTACT US
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+
+  <div class="footer">
+
+    <img src="Logo.png" class="footer-logo">
+
+    <p>
+      Financial relief for hospitality workers.
+    </p>
+
+    <p>
+      Kansas City, MO
+    </p>
+
+    <p>
+      <a href="mailto:info@publife.org">
+        info@publife.org
+      </a>
+    </p>
+
+    <div class="socials">
+
+      <a href="https://www.facebook.com/100069530393569/">
+        <img src="facebook.png">
+      </a>
+
+      <a href="https://www.instagram.com/publifekc">
+        <img src="instagram.png">
+      </a>
+
+    </div>
+
+    <p style="margin-top:30px;">
+      Registered 501(c)(3) nonprofit organization.
+    </p>
+
+  </div>
+
+</section>
 
 <script>
+
 function toggleMenu() {
   document.getElementById("mobileMenu").classList.toggle("active");
   document.getElementById("menuBackdrop").classList.toggle("active");
@@ -170,6 +475,7 @@ function closeMenu() {
   document.getElementById("mobileMenu").classList.remove("active");
   document.getElementById("menuBackdrop").classList.remove("active");
 }
+
 </script>
 
 </body>
