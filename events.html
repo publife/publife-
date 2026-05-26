@@ -56,12 +56,12 @@ body {
 }
 
 .menu-toggle {
-  font-size: 28px;
-  color: #ffffff;
+  font-size: 26px;
+  color: #e8e1d3;
   cursor: pointer;
 }
 
-/* MOBILE MENU */
+/* SIDE MENU */
 
 .mobile-menu {
   position: fixed;
@@ -69,39 +69,92 @@ body {
   left: -300px;
   width: 260px;
   height: 100%;
-  background: url('neon.jpg') center center / cover no-repeat;
-  padding: 80px 20px;
+  background: url('neon.jpg') center/cover no-repeat;
+  padding: 80px 20px 40px;
   display: flex;
   flex-direction: column;
   gap: 12px;
   transition: 0.3s ease;
   z-index: 99;
+  overflow-y: auto;
 }
 
 .mobile-menu::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.92);
+  background: rgba(0,0,0,0.88);
 }
 
 .mobile-menu a {
   position: relative;
-  color: #b08d57;
+  color: white;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
   padding: 12px;
   border-radius: 8px;
   z-index: 1;
-  transition: 0.2s ease;
+  transition: 0.2s;
 }
 
 .mobile-menu a:hover {
-  background: rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.1);
+}
+
+.mobile-menu a:active {
+  background: rgba(176,141,87,0.4);
 }
 
 .mobile-menu.active {
   left: 0;
+}
+
+/* GOLD LINKS */
+
+.gold-link {
+  color: #b08d57 !important;
+  font-weight: bold;
+}
+
+/* MENU FOOTER */
+
+.menu-footer {
+  position: relative;
+  margin-top: auto;
+  padding-top: 40px;
+  text-align: center;
+  z-index: 1;
+}
+
+.menu-divider {
+  position: relative;
+  margin-bottom: 26px;
+  height: 1px;
+  background: rgba(176,141,87,0.6);
+}
+
+.menu-shield {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: black;
+  color: #b08d57;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+.menu-logo {
+  width: 170px;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.menu-tagline {
+  color: #b08d57;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.5;
 }
 
 /* MENU BACKDROP */
@@ -109,7 +162,7 @@ body {
 .menu-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0,0,0,0.4);
   opacity: 0;
   pointer-events: none;
   transition: 0.3s;
@@ -136,25 +189,15 @@ body {
   display: inline-block;
   margin-top: 20px;
   padding: 18px 28px;
-
   background: rgba(0,0,0,0.58);
-
   border: 1px solid rgba(176,141,87,0.35);
-
   border-radius: 14px;
-
   backdrop-filter: blur(4px);
-
   text-align: center;
-
   font-size: clamp(28px, 6vw, 42px);
-
   line-height: 1.25;
-
   font-weight: bold;
-
   color: white;
-
   text-shadow:
     0 2px 10px rgba(0,0,0,0.65);
 }
@@ -392,13 +435,34 @@ body {
 <nav id="mobileMenu" class="mobile-menu">
 
   <a href="index.html">Home</a>
+
   <a href="about.html">About</a>
+
   <a href="how-it-works.html">How It Works</a>
-  <a href="events.html">PubLife Presents:</a>
-  <a href="partners.html">PubLife Partners</a>
+
+  <a href="events.html" class="gold-link">PubLife Presents:</a>
+
+  <a href="partners.html" class="gold-link">PubLife Partners</a>
+
   <a href="apply.html">Apply for Assistance</a>
+
   <a href="volunteer.html">Volunteer</a>
+
   <a href="contact.html">Contact</a>
+
+  <div class="menu-footer">
+
+    <div class="menu-divider">
+      <span class="menu-shield">🛡</span>
+    </div>
+
+    <img src="Logo.png" class="menu-logo">
+
+    <div class="menu-tagline">
+      Financial relief for hospitality workers.
+    </div>
+
+  </div>
 
 </nav>
 
