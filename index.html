@@ -1,4 +1,4 @@
-<!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -6,23 +6,28 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" href="favicon.png">
-  
+<link rel="icon" type="image/png" href="favicon.png">
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-E2SVSM6J0N"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-E2SVSM6J0N');
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-E2SVSM6J0N');
 </script>
 
 <style>
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -33,6 +38,7 @@ body {
 }
 
 /* BACKGROUND */
+
 .bg {
   position: fixed;
   inset: 0;
@@ -48,6 +54,7 @@ body {
 }
 
 /* NAV */
+
 .top-bar {
   position: fixed;
   top: 0;
@@ -64,6 +71,7 @@ body {
 }
 
 /* SIDE MENU */
+
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -71,12 +79,13 @@ body {
   width: 260px;
   height: 100%;
   background: url('neon.jpg') center/cover no-repeat;
-  padding: 80px 20px;
+  padding: 80px 20px 40px;
   display: flex;
   flex-direction: column;
   gap: 12px;
   transition: 0.3s ease;
   z-index: 9;
+  overflow-y: auto;
 }
 
 .mobile-menu::before {
@@ -109,7 +118,56 @@ body {
   left: 0;
 }
 
+/* GOLD LINKS */
+
+.gold-link {
+  color: #b08d57 !important;
+  font-weight: bold;
+}
+
+/* MENU FOOTER */
+
+.menu-footer {
+  position: relative;
+  margin-top: auto;
+  padding-top: 40px;
+  text-align: center;
+  z-index: 1;
+}
+
+.menu-divider {
+  position: relative;
+  margin-bottom: 26px;
+  height: 1px;
+  background: rgba(176,141,87,0.6);
+}
+
+.menu-shield {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: black;
+  color: #b08d57;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+.menu-logo {
+  width: 170px;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.menu-tagline {
+  color: #b08d57;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
 /* BACKDROP */
+
 .menu-backdrop {
   position: fixed;
   inset: 0;
@@ -126,6 +184,7 @@ body {
 }
 
 /* HERO */
+
 .hero-wrap {
   min-height: 100dvh;
   display: flex;
@@ -135,6 +194,7 @@ body {
 }
 
 /* CONTENT */
+
 .content {
   width: 100%;
   max-width: 380px;
@@ -143,6 +203,7 @@ body {
 }
 
 /* HEADLINE */
+
 .headline {
   font-size: clamp(28px, 7vw, 36px);
   line-height: 1.2;
@@ -151,13 +212,15 @@ body {
 }
 
 /* LOGO */
+
 .logo {
-width: clamp(240px, 68vw, 390px);
+  width: clamp(240px, 68vw, 390px);
   margin: 14px auto 20px;
   display: block;
 }
 
 /* MISSION */
+
 .mission {
   font-size: clamp(16px, 3.2vw, 18px);
   line-height: 1.65;
@@ -167,6 +230,7 @@ width: clamp(240px, 68vw, 390px);
 }
 
 /* BUTTONS */
+
 .btn {
   display: block;
   width: 100%;
@@ -181,6 +245,7 @@ width: clamp(240px, 68vw, 390px);
 }
 
 /* DONATE */
+
 .donate {
   background: #b08d57;
   color: black;
@@ -189,12 +254,14 @@ width: clamp(240px, 68vw, 390px);
 }
 
 /* APPLY */
+
 .apply {
   background: #e8e1d3;
   color: black;
 }
 
 /* FOOTER */
+
 .footer {
   margin-top: 24px;
   font-size: 14px;
@@ -207,6 +274,7 @@ width: clamp(240px, 68vw, 390px);
 }
 
 /* SOCIALS */
+
 .socials {
   margin-top: 16px;
   display: flex;
@@ -227,6 +295,7 @@ width: clamp(240px, 68vw, 390px);
 <div class="overlay"></div>
 
 <!-- NAV -->
+
 <div class="top-bar">
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </div>
@@ -234,17 +303,43 @@ width: clamp(240px, 68vw, 390px);
 <div id="menuBackdrop" class="menu-backdrop" onclick="closeMenu()"></div>
 
 <nav id="mobileMenu" class="mobile-menu">
-  <a href="donate.html">Donate</a>
+
+  <a href="index.html">Home</a>
+
   <a href="about.html">About</a>
+
   <a href="how-it-works.html">How It Works</a>
-  <a href="events.html">Events</a>
+
+  <a href="events.html" class="gold-link">PubLife Presents:</a>
+
+  <a href="partners.html" class="gold-link">PubLife Partners</a>
+
   <a href="apply.html">Apply for Assistance</a>
+
   <a href="volunteer.html">Volunteer</a>
+
   <a href="contact.html">Contact</a>
+
+  <div class="menu-footer">
+
+    <div class="menu-divider">
+      <span class="menu-shield">🛡</span>
+    </div>
+
+    <img src="Logo.png" class="menu-logo">
+
+    <div class="menu-tagline">
+      Financial relief for hospitality workers.
+    </div>
+
+  </div>
+
 </nav>
 
 <!-- HERO -->
+
 <div class="hero-wrap">
+
   <div class="content">
 
     <div class="headline">
@@ -258,31 +353,45 @@ width: clamp(240px, 68vw, 390px);
     </div>
 
     <div class="nonprofit">
-  Registered 501(c)(3) nonprofit organization.
-</div>
-    
-    <a href="donate.html" class="btn donate">DONATE NOW</a>
+      Registered 501(c)(3) nonprofit organization.
+    </div>
 
-    <a href="apply.html" class="btn apply">APPLY HERE</a>
+    <a href="donate.html" class="btn donate">
+      DONATE NOW
+    </a>
+
+    <a href="apply.html" class="btn apply">
+      APPLY HERE
+    </a>
 
     <div class="footer">
+
       Kansas City, MO<br>
-      <a href="mailto:info@publife.org">info@publife.org</a>
+
+      <a href="mailto:info@publife.org">
+        info@publife.org
+      </a>
 
       <div class="socials">
+
         <a href="https://www.facebook.com/100069530393569/">
           <img src="facebook.png">
         </a>
+
         <a href="https://www.instagram.com/publifekc">
           <img src="instagram.png">
         </a>
+
       </div>
+
     </div>
 
   </div>
+
 </div>
 
 <script>
+
 function toggleMenu() {
   document.getElementById("mobileMenu").classList.toggle("active");
   document.getElementById("menuBackdrop").classList.toggle("active");
@@ -292,6 +401,7 @@ function closeMenu() {
   document.getElementById("mobileMenu").classList.remove("active");
   document.getElementById("menuBackdrop").classList.remove("active");
 }
+
 </script>
 
 </body>
