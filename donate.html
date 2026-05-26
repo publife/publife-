@@ -8,16 +8,24 @@
 
 <style>
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
   font-family: 'Georgia', serif;
   color: white;
   background: black;
+  overflow-x: hidden;
 }
 
 /* BACKGROUND */
+
 .bg {
   position: fixed;
   inset: 0;
@@ -28,69 +36,271 @@ body {
 .overlay {
   position: fixed;
   inset: 0;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+  background: linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.92));
   z-index: -2;
 }
 
+/* NAV */
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px;
+  z-index: 10;
+}
+
+.menu-toggle {
+  font-size: 26px;
+  color: #e8e1d3;
+  cursor: pointer;
+}
+
+/* SIDE MENU */
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 260px;
+  height: 100%;
+  background: url('neon.jpg') center/cover no-repeat;
+  padding: 80px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: 0.3s ease;
+  z-index: 9;
+  overflow-y: auto;
+}
+
+.mobile-menu::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+}
+
+.mobile-menu a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 12px;
+  border-radius: 8px;
+  z-index: 1;
+  transition: 0.2s;
+}
+
+.mobile-menu a:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.mobile-menu a:active {
+  background: rgba(176,141,87,0.4);
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+/* GOLD LINKS */
+
+.gold-link {
+  color: #b08d57 !important;
+  font-weight: bold;
+}
+
+/* MENU FOOTER */
+
+.menu-footer {
+  position: relative;
+  margin-top: auto;
+  padding-top: 40px;
+  text-align: center;
+  z-index: 1;
+}
+
+.menu-divider {
+  position: relative;
+  margin-bottom: 26px;
+  height: 1px;
+  background: rgba(176,141,87,0.6);
+}
+
+.menu-shield {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: black;
+  color: #b08d57;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+.menu-logo {
+  width: 170px;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.menu-tagline {
+  color: #b08d57;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* BACKDROP */
+
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 8;
+}
+
+.menu-backdrop.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
 /* CONTENT */
+
 .container {
-  max-width: 420px;
+  max-width: 520px;
   margin: 0 auto;
-  padding: 100px 20px 40px;
+  padding: 110px 22px 70px;
   text-align: center;
 }
 
 /* HEADLINE */
+
 h1 {
-  font-size: 32px;
-  margin-bottom: 20px;
+  font-size: clamp(36px, 8vw, 52px);
+  margin-bottom: 24px;
 }
 
 /* TEXT */
+
 .text {
-  font-size: 17px;
-  line-height: 1.6;
-  margin-bottom: 30px;
+  font-size: 18px;
+  line-height: 1.9;
+  margin-bottom: 40px;
   color: #f4f1ea;
+  background: rgba(0,0,0,0.38);
+  border: 1px solid rgba(176,141,87,0.12);
+  border-radius: 18px;
+  padding: 30px 24px;
+  backdrop-filter: blur(2px);
 }
 
 /* BUTTONS */
+
 .btn {
   display: block;
   width: 100%;
-  margin: 12px auto;
-  padding: 16px;
+  margin: 14px auto;
+  padding: 18px;
   font-size: 17px;
-  border-radius: 12px;
+  border-radius: 14px;
   text-decoration: none;
   text-align: center;
   font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
 }
 
 /* ZEFFY */
+
 .zeffy {
   background: #6c63ff;
   color: white;
+  box-shadow: 0 0 14px rgba(108,99,255,0.28);
 }
 
 /* GOFUNDME */
+
 .gfm {
   background: #02a95c;
   color: white;
+  box-shadow: 0 0 14px rgba(2,169,92,0.22);
 }
 
 /* VENMO */
+
 .venmo {
   background: #3d95ce;
   color: white;
+  box-shadow: 0 0 14px rgba(61,149,206,0.22);
 }
 
 /* BACK LINK */
+
 .back {
-  margin-top: 30px;
+  margin-top: 34px;
   display: inline-block;
   color: #b08d57;
   text-decoration: underline;
+  font-size: 16px;
+}
+
+/* FOOTER */
+
+.footer {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 220px;
+  max-width: 80%;
+  margin-bottom: 20px;
+}
+
+.footer p {
+  margin: 10px 0;
+  color: #e8e1d3;
+  line-height: 1.7;
+}
+
+.footer a {
+  color: #b08d57;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.socials img {
+  width: 42px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .container {
+    padding: 100px 18px 60px;
+  }
+
+  .text {
+    font-size: 17px;
+    line-height: 1.8;
+    padding: 26px 20px;
+  }
+
 }
 
 </style>
@@ -101,33 +311,54 @@ h1 {
 <div class="bg"></div>
 <div class="overlay"></div>
 
+<!-- NAV -->
+
+<div class="top-bar">
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</div>
+
+<div id="menuBackdrop" class="menu-backdrop" onclick="closeMenu()"></div>
+
+<nav id="mobileMenu" class="mobile-menu">
+
+  <a href="index.html">Home</a>
+
+  <a href="about.html">About</a>
+
+  <a href="how-it-works.html">How It Works</a>
+
+  <a href="events.html" class="gold-link">PubLife Presents:</a>
+
+  <a href="partners.html" class="gold-link">PubLife Partners</a>
+
+  <a href="apply.html">Apply for Assistance</a>
+
+  <a href="volunteer.html">Volunteer</a>
+
+  <a href="contact.html">Contact</a>
+
+  <div class="menu-footer">
+
+    <div class="menu-divider">
+      <span class="menu-shield">🛡</span>
+    </div>
+
+    <img src="Logo.png" class="menu-logo">
+
+    <div class="menu-tagline">
+      Financial relief for hospitality workers.
+    </div>
+
+  </div>
+
+</nav>
+
+<!-- CONTENT -->
+
 <div class="container">
 
   <h1>Support PubLife</h1>
 
   <div class="text">
-  We use Zeffy as our preferred donation platform to help ensure that <strong>100% of your donation goes directly to supporting hospitality workers</strong> facing medical emergencies.
-  <br><br>
-  Zeffy is a secure, fee-free platform built specifically for nonprofits.
-  <br><br>
-  For those who prefer, we also offer GoFundMe and Venmo as alternative ways to give.
-</div>
 
-  <a href="https://www.zeffy.com/en-US/donation-form/help-publife-support-hospitality-workers-with-medical-costs" class="btn zeffy">
-    Donate with Zeffy (No Fees)
-  </a>
-
-  <a href="https://gofund.me/35bd90c1a" class="btn gfm">
-    Donate with GoFundMe
-  </a>
-
-  <a href="https://venmo.com/u/Pubalife" class="btn venmo">
-    Donate with Venmo
-  </a>
-
-  <a href="index.html" class="back">← Back to Home</a>
-
-</div>
-
-</body>
-</html>
+    We use Zeff
