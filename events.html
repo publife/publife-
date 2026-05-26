@@ -29,20 +29,19 @@ body {
 .hero {
   position: relative;
   min-height: 100vh;
+
   background:
     linear-gradient(
       to bottom,
-      rgba(0,0,0,0.08) 0%,
+      rgba(0,0,0,0.12) 0%,
       rgba(0,0,0,0.28) 35%,
-      rgba(0,0,0,0.75) 72%,
+      rgba(0,0,0,0.65) 68%,
+      rgba(0,0,0,0.92) 88%,
       #050505 100%
     ),
-    url('presents-hero.png') center top / contain no-repeat,
-    #050505;
+    url('presents-hero.png') center top / contain no-repeat;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: #050505;
 }
 
 /* TOP BAR */
@@ -125,48 +124,58 @@ body {
 /* HERO CONTENT */
 
 .hero-content {
-  width: 100%;
-  max-width: 700px;
+  max-width: 620px;
   margin: 0 auto;
   padding: 520px 24px 120px;
   text-align: center;
 }
 
-/* HEADER BANNER */
+/* HERO BANNER */
 
 .hero-banner {
   display: inline-block;
-  background: rgba(0,0,0,0.55);
-  border: 1px solid rgba(176,141,87,0.28);
-  padding: 18px 26px;
+  margin-top: 20px;
+  padding: 18px 28px;
+
+  background: rgba(0,0,0,0.58);
+
+  border: 1px solid rgba(176,141,87,0.35);
+
   border-radius: 14px;
+
   backdrop-filter: blur(4px);
-  margin-bottom: 38px;
-}
 
-.hero-title {
-  font-size: clamp(28px, 5vw, 42px);
-  line-height: 1.35;
-  margin: 0;
+  text-align: center;
+
+  font-size: clamp(28px, 6vw, 42px);
+
+  line-height: 1.25;
+
   font-weight: bold;
-  text-shadow: 0 4px 14px rgba(0,0,0,0.55);
+
+  color: white;
+
+  text-shadow:
+    0 2px 10px rgba(0,0,0,0.65);
 }
 
-.hero-title span {
+.hero-banner div {
+  margin: 2px 0;
+}
+
+.hero-banner span {
   color: #b08d57;
 }
 
-/* BODY TEXT */
+/* HERO TEXT */
 
 .hero-text {
   font-size: 21px;
-  line-height: 1.9;
+  line-height: 1.8;
   color: #f3f0ea;
+  margin-top: 36px;
   margin-bottom: 42px;
   text-shadow: 0 3px 10px rgba(0,0,0,0.55);
-  background: rgba(0,0,0,0.45);
-  padding: 24px;
-  border-radius: 14px;
 }
 
 /* CTA BUTTON */
@@ -253,9 +262,13 @@ body {
       rgba(12,12,12,1),
       rgba(18,18,18,1)
     );
+
   border: 1px solid rgba(176,141,87,0.16);
+
   border-radius: 18px;
+
   padding: 40px 28px;
+
   text-align: center;
 }
 
@@ -329,34 +342,28 @@ body {
     background:
       linear-gradient(
         to bottom,
-        rgba(0,0,0,0.05) 0%,
-        rgba(0,0,0,0.25) 38%,
-        rgba(0,0,0,0.78) 74%,
+        rgba(0,0,0,0.10) 0%,
+        rgba(0,0,0,0.28) 38%,
+        rgba(0,0,0,0.72) 72%,
+        rgba(0,0,0,0.95) 90%,
         #050505 100%
       ),
-      url('presents-hero.png') center top / contain no-repeat,
-      #050505;
+      url('presents-hero.png') center top / contain no-repeat;
+
+    background-color: #050505;
   }
 
   .hero-content {
-    padding-top: 430px;
-    padding-bottom: 90px;
+    padding: 340px 20px 100px;
   }
 
   .hero-banner {
-    padding: 14px 18px;
-    margin-bottom: 26px;
-  }
-
-  .hero-title {
-    font-size: 24px;
-    line-height: 1.45;
+    font-size: 42px;
+    padding: 16px 22px;
   }
 
   .hero-text {
     font-size: 18px;
-    line-height: 1.8;
-    padding: 20px;
   }
 
   .section-title h2 {
@@ -402,12 +409,9 @@ body {
   <div class="hero-content">
 
     <div class="hero-banner">
-
-      <div class="hero-title">
-        Community events. Real impact.
-        <span>Stronger together.</span>
-      </div>
-
+      <div>Community events.</div>
+      <div>Real impact.</div>
+      <div><span>Stronger together.</span></div>
     </div>
 
     <div class="hero-text">
@@ -425,8 +429,6 @@ body {
 <!-- CONTENT -->
 
 <section id="events" class="content">
-
-  <!-- EVENTS SECTION -->
 
   <div class="section">
 
