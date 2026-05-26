@@ -9,7 +9,14 @@
 <style>
 
 /* GLOBAL */
-* { box-sizing: border-box; }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -20,6 +27,7 @@ body {
 }
 
 /* BACKGROUND */
+
 .bg {
   position: fixed;
   inset: 0;
@@ -35,6 +43,7 @@ body {
 }
 
 /* NAV */
+
 .top-bar {
   position: fixed;
   top: 0;
@@ -50,27 +59,29 @@ body {
   cursor: pointer;
 }
 
-/* MENU */
+/* SIDE MENU */
+
 .mobile-menu {
   position: fixed;
   top: 0;
   left: -300px;
   width: 260px;
   height: 100%;
-  background: url('neon.png') center/cover no-repeat;
-  padding: 80px 20px;
+  background: url('neon.jpg') center/cover no-repeat;
+  padding: 80px 20px 40px;
   display: flex;
   flex-direction: column;
   gap: 12px;
   transition: 0.3s ease;
   z-index: 9;
+  overflow-y: auto;
 }
 
 .mobile-menu::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.88);
 }
 
 .mobile-menu a {
@@ -81,9 +92,70 @@ body {
   padding: 12px;
   border-radius: 8px;
   z-index: 1;
+  transition: 0.2s;
 }
 
-.mobile-menu.active { left: 0; }
+.mobile-menu a:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.mobile-menu a:active {
+  background: rgba(176,141,87,0.4);
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+/* GOLD LINKS */
+
+.gold-link {
+  color: #b08d57 !important;
+  font-weight: bold;
+}
+
+/* MENU FOOTER */
+
+.menu-footer {
+  position: relative;
+  margin-top: auto;
+  padding-top: 40px;
+  text-align: center;
+  z-index: 1;
+}
+
+.menu-divider {
+  position: relative;
+  margin-bottom: 26px;
+  height: 1px;
+  background: rgba(176,141,87,0.6);
+}
+
+.menu-shield {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: black;
+  color: #b08d57;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+.menu-logo {
+  width: 170px;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.menu-tagline {
+  color: #b08d57;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* BACKDROP */
 
 .menu-backdrop {
   position: fixed;
@@ -101,35 +173,103 @@ body {
 }
 
 /* CONTENT */
+
 .wrapper {
-  padding: 100px 20px 40px;
-  max-width: 600px;
+  padding: 110px 22px 70px;
+  max-width: 640px;
   margin: 0 auto;
   text-align: center;
 }
 
+.content-box {
+  background: rgba(0,0,0,0.38);
+  border: 1px solid rgba(176,141,87,0.12);
+  border-radius: 18px;
+  padding: 40px 28px;
+  backdrop-filter: blur(2px);
+}
+
 h1 {
-  font-size: 28px;
-  margin-bottom: 20px;
+  font-size: clamp(36px, 8vw, 50px);
+  margin-bottom: 24px;
 }
 
 p {
-  line-height: 1.7;
-  margin-bottom: 20px;
-  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 24px;
+  font-size: 18px;
+  color: #f0ece4;
 }
 
 .email {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 12px;
+  padding: 16px 28px;
   font-size: 18px;
-  color: #b08d57;
+  color: black;
+  background: #b08d57;
+  border-radius: 12px;
   text-decoration: none;
   font-weight: bold;
+  box-shadow: 0 0 14px rgba(176,141,87,0.28);
+  transition: 0.2s ease;
 }
 
 .email:hover {
-  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+/* FOOTER */
+
+.footer {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 220px;
+  max-width: 80%;
+  margin-bottom: 20px;
+}
+
+.footer p {
+  margin: 10px 0;
+  color: #e8e1d3;
+  line-height: 1.7;
+}
+
+.footer a {
+  color: #b08d57;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.socials img {
+  width: 42px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .wrapper {
+    padding: 100px 18px 60px;
+  }
+
+  .content-box {
+    padding: 30px 22px;
+  }
+
+  p {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
 }
 
 </style>
@@ -141,6 +281,7 @@ p {
 <div class="overlay"></div>
 
 <!-- NAV -->
+
 <div class="top-bar">
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </div>
@@ -148,29 +289,103 @@ p {
 <div id="menuBackdrop" class="menu-backdrop" onclick="closeMenu()"></div>
 
 <nav id="mobileMenu" class="mobile-menu">
+
   <a href="index.html">Home</a>
+
   <a href="about.html">About</a>
+
   <a href="how-it-works.html">How It Works</a>
-  <a href="events.html">Events</a>
+
+  <a href="events.html" class="gold-link">PubLife Presents:</a>
+
+  <a href="partners.html" class="gold-link">PubLife Partners</a>
+
   <a href="apply.html">Apply for Assistance</a>
+
   <a href="volunteer.html">Volunteer</a>
+
   <a href="contact.html">Contact</a>
+
+  <div class="menu-footer">
+
+    <div class="menu-divider">
+      <span class="menu-shield">🛡</span>
+    </div>
+
+    <img src="Logo.png" class="menu-logo">
+
+    <div class="menu-tagline">
+      Financial relief for hospitality workers.
+    </div>
+
+  </div>
+
 </nav>
 
 <!-- CONTENT -->
+
 <div class="wrapper">
 
-<h1>Contact</h1>
+  <div class="content-box">
 
-<p>If you have any questions, would like to get involved, or need to reach out for any reason, you can contact us directly.</p>
+    <h1>Contact</h1>
 
-<p>We aim to respond as quickly as possible.</p>
+    <p>
+      If you have any questions, would like to get involved, or need to reach out for any reason, you can contact us directly.
+    </p>
 
-<a href="mailto:info@publife.org" class="email">info@publife.org</a>
+    <p>
+      We aim to respond as quickly as possible.
+    </p>
+
+    <a href="mailto:info@publife.org" class="email">
+      info@publife.org
+    </a>
+
+  </div>
+
+  <!-- FOOTER -->
+
+  <div class="footer">
+
+    <img src="Logo.png" class="footer-logo">
+
+    <p>
+      Financial relief for hospitality workers.
+    </p>
+
+    <p>
+      Kansas City, MO
+    </p>
+
+    <p>
+      <a href="mailto:info@publife.org">
+        info@publife.org
+      </a>
+    </p>
+
+    <div class="socials">
+
+      <a href="https://www.facebook.com/100069530393569/">
+        <img src="facebook.png">
+      </a>
+
+      <a href="https://www.instagram.com/publifekc">
+        <img src="instagram.png">
+      </a>
+
+    </div>
+
+    <p style="margin-top:30px;">
+      Registered 501(c)(3) nonprofit organization.
+    </p>
+
+  </div>
 
 </div>
 
 <script>
+
 function toggleMenu() {
   document.getElementById("mobileMenu").classList.toggle("active");
   document.getElementById("menuBackdrop").classList.toggle("active");
@@ -180,6 +395,7 @@ function closeMenu() {
   document.getElementById("mobileMenu").classList.remove("active");
   document.getElementById("menuBackdrop").classList.remove("active");
 }
+
 </script>
 
 </body>
