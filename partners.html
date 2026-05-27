@@ -259,7 +259,7 @@ body {
   color: #ece7dd;
 }
 
-/* LOGOS */
+/* PARTNER LOGOS */
 
 .partner-logo {
   width: 100%;
@@ -294,39 +294,44 @@ body {
 
 .cta p {
   max-width: 760px;
-  margin: 0 auto 30px;
+  margin: 0 auto;
   line-height: 1.8;
   font-size: 20px;
   color: #ece7dd;
 }
 
-.cta-btn {
-  display: inline-block;
-  background: rgba(255,255,255,0.03);
-  color: white;
+.cta-panel-link {
   text-decoration: none;
-  padding: 18px 38px;
-  border-radius: 14px;
-  font-weight: bold;
-  letter-spacing: 1px;
+  color: white;
+  display: block;
+}
 
-  border: 2px solid #b08d57;
+.big-cta {
+
+  cursor: pointer;
+
+  border:
+    2px solid rgba(176,141,87,0.55);
+
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.22),
+    0 0 26px rgba(176,141,87,0.12);
+
+  transition: 0.3s ease;
+}
+
+.big-cta:hover {
+
+  transform: translateY(-4px);
+
+  background: rgba(255,255,255,0.04);
+
+  border:
+    2px solid rgba(176,141,87,0.9);
 
   box-shadow:
     0 0 0 1px rgba(255,255,255,0.35),
-    0 0 18px rgba(176,141,87,0.18);
-
-  transition: 0.25s ease;
-}
-
-.cta-btn:hover {
-  background: rgba(176,141,87,0.12);
-
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,0.5),
-    0 0 24px rgba(176,141,87,0.28);
+    0 0 38px rgba(176,141,87,0.22);
 }
 
 /* FOOTER */
@@ -449,226 +454,4 @@ body {
 
   <!-- CATEGORY CARDS -->
 
-  <section class="panel">
-
-    <h2 class="section-title">
-      COMMUNITY PARTNERS
-    </h2>
-
-    <div class="partner-grid">
-
-      <div class="partner-box category-box" onclick="scrollToSection('hospitality')">
-
-        <h3>Hospitality</h3>
-
-        <p>
-          Bars, restaurants, breweries, cafes, and hospitality teams supporting the mission.
-        </p>
-
-      </div>
-
-      <div class="partner-box category-box" onclick="scrollToSection('events')">
-
-        <h3>Events</h3>
-
-        <p>
-          Community nights, tournaments, fundraisers, and collaborative experiences.
-        </p>
-
-      </div>
-
-      <div class="partner-box category-box" onclick="scrollToSection('supporters')">
-
-        <h3>Supporters</h3>
-
-        <p>
-          Individuals and organizations helping through outreach and advocacy.
-        </p>
-
-      </div>
-
-      <div class="partner-box category-box" onclick="scrollToSection('sponsors')">
-
-        <h3>Sponsors</h3>
-
-        <p>
-          Businesses helping sustain long-term support for hospitality workers.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- CTA -->
-
-  <section class="panel cta">
-
-    <h2>
-      Join us in supporting our community.
-    </h2>
-
-    <p>
-      Interested in partnering with PubLife? We'd love to connect and learn how we can support the hospitality community together.
-    </p>
-
-    <a
-      href="PASTE-YOUR-GOOGLE-FORM-LINK-HERE"
-      target="_blank"
-      class="cta-btn"
-    >
-      JOIN US
-    </a>
-
-  </section>
-
-  <!-- HOSPITALITY -->
-
-  <section id="hospitality" class="panel">
-
-    <h2 class="section-title">
-      Hospitality Partners
-    </h2>
-
-    <div class="partner-grid">
-
-      <div class="partner-box">
-
-        <img src="partner-logo.png" class="partner-logo">
-
-        <h3>
-          Partner Name
-        </h3>
-
-        <p>
-          Kansas City, MO
-        </p>
-
-        <a href="https://website.com" target="_blank" class="partner-link">
-          Visit Website
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- EVENTS -->
-
-  <section id="events" class="panel">
-
-    <h2 class="section-title">
-      Event Partners
-    </h2>
-
-    <div class="partner-grid">
-
-    </div>
-
-  </section>
-
-  <!-- SUPPORTERS -->
-
-  <section id="supporters" class="panel">
-
-    <h2 class="section-title">
-      Community Supporters
-    </h2>
-
-    <div class="partner-grid">
-
-    </div>
-
-  </section>
-
-  <!-- SPONSORS -->
-
-  <section id="sponsors" class="panel">
-
-    <h2 class="section-title">
-      Sponsors
-    </h2>
-
-    <div class="partner-grid">
-
-    </div>
-
-  </section>
-
-  <!-- FOOTER -->
-
-  <div class="footer">
-
-    <img src="Logo.png" class="footer-logo">
-
-    <p>
-      Kansas City, MO
-    </p>
-
-    <p>
-      <a href="mailto:info@publife.org">
-        info@publife.org
-      </a>
-    </p>
-
-    <div class="socials">
-
-      <a href="https://www.facebook.com/100069530393569/">
-        <img src="facebook.png">
-      </a>
-
-      <a href="https://www.instagram.com/publifekc">
-        <img src="instagram.png">
-      </a>
-
-    </div>
-
-    <p style="margin-top:30px;">
-      Registered 501(c)(3) nonprofit organization.
-    </p>
-
-  </div>
-
-</div>
-
-<script>
-
-const mobileMenu = document.getElementById("mobileMenu");
-const menuBackdrop = document.getElementById("menuBackdrop");
-
-function toggleMenu() {
-  mobileMenu.classList.toggle("active");
-  menuBackdrop.classList.toggle("active");
-}
-
-function closeMenu() {
-  mobileMenu.classList.remove("active");
-  menuBackdrop.classList.remove("active");
-}
-
-document.querySelectorAll(".mobile-menu a").forEach(link => {
-  link.addEventListener("click", () => {
-    closeMenu();
-  });
-});
-
-function scrollToSection(id) {
-
-  const section = document.getElementById(id);
-
-  if(section) {
-
-    section.scrollIntoView({
-      behavior: "smooth"
-    });
-
-  }
-
-}
-
-</script>
-
-</body>
-</html>
+  <
