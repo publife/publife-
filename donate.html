@@ -6,37 +6,129 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-
-*{
-box-sizing:border-box;
-}
-
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 body{
 margin:0;
-font-family:'Georgia',serif;
+font-family:Georgia,serif;
 color:white;
 background:black;
+overflow-x:hidden;
 }
 
 .bg{
 position:fixed;
 inset:0;
-background:url('partners-bg.jpg') center center/cover no-repeat;
+background:
+linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.92)),
+url('partners-bg.jpg') center center/cover no-repeat;
 z-index:-3;
-}
-
-.overlay{
-position:fixed;
-inset:0;
-background:linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.92));
-z-index:-2;
 }
 
 .container{
 max-width:700px;
 margin:0 auto;
-padding:80px 20px 80px;
+padding:120px 20px 80px;
 text-align:center;
+}
+
+.top-bar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:16px;
+z-index:100;
+}
+
+.menu-toggle{
+font-size:28px;
+color:white;
+cursor:pointer;
+}
+
+.mobile-menu{
+position:fixed;
+top:0;
+left:-300px;
+width:260px;
+height:100%;
+background:url('neon.jpg') center/cover no-repeat;
+padding:80px 20px 40px;
+display:flex;
+flex-direction:column;
+gap:12px;
+transition:.3s ease;
+z-index:999;
+overflow-y:auto;
+}
+
+.mobile-menu::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.88);
+}
+
+.mobile-menu a{
+position:relative;
+color:white;
+text-decoration:none;
+font-size:18px;
+padding:12px;
+border-radius:8px;
+z-index:1;
+}
+
+.mobile-menu.active{left:0;}
+
+.gold-link{
+color:#b08d57!important;
+font-weight:bold;
+}
+
+.menu-footer{
+position:relative;
+margin-top:auto;
+padding-top:40px;
+text-align:center;
+z-index:1;
+}
+
+.menu-divider{
+position:relative;
+margin-bottom:26px;
+height:1px;
+background:rgba(176,141,87,.6);
+}
+
+.menu-shield{
+position:absolute;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+background:black;
+color:#b08d57;
+padding:0 10px;
+font-size:14px;
+}
+
+.menu-logo{width:170px;margin-bottom:10px;}
+.menu-tagline{color:#b08d57;font-size:14px;font-style:italic;}
+
+.menu-backdrop{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.45);
+opacity:0;
+pointer-events:none;
+transition:.3s;
+z-index:998;
+}
+
+.menu-backdrop.active{
+opacity:1;
+pointer-events:all;
 }
 
 .page-logo{
@@ -49,18 +141,16 @@ display:block;
 h1{
 font-size:clamp(42px,8vw,64px);
 margin-bottom:25px;
-text-shadow:0 2px 8px rgba(0,0,0,.6);
 }
 
-.intro-card{
+.intro-card,
+.donation-card,
+.trust-card{
 background:rgba(0,0,0,.45);
 border:1px solid rgba(176,141,87,.25);
-border-radius:28px;
+border-radius:32px;
 padding:30px;
-margin-bottom:30px;
-font-size:20px;
-line-height:1.8;
-color:#f4f1ea;
+margin-bottom:24px;
 backdrop-filter:blur(4px);
 }
 
@@ -69,13 +159,7 @@ backdrop-filter:blur(4px);
 display:block;
 text-decoration:none;
 color:white;
-background:rgba(0,0,0,.45);
-border:1px solid rgba(176,141,87,.25);
-border-radius:32px;
-padding:38px 30px;
-margin-bottom:24px;
 transition:.25s;
-backdrop-filter:blur(4px);
 }
 
 .donation-card:hover,
@@ -88,7 +172,6 @@ border-color:#b08d57;
 color:#d2b07b;
 font-size:clamp(26px,5vw,42px);
 font-weight:bold;
-line-height:1.15;
 margin-bottom:18px;
 }
 
@@ -102,41 +185,56 @@ color:#f4f1ea;
 border:2px solid #b08d57;
 }
 
-.back{
-display:inline-block;
+.footer{
+margin-top:80px;
+text-align:center;
+}
+
+.footer-logo{
+width:230px;
+max-width:80%;
+margin-bottom:18px;
+}
+
+.socials{
+display:flex;
+justify-content:center;
+gap:18px;
 margin-top:20px;
-color:#b08d57;
-font-size:18px;
-text-decoration:underline;
 }
 
-@media(max-width:600px){
+.socials img{width:42px;}
 
-.container{
-padding:60px 18px;
-}
-
-.card-title{
-font-size:22px;
-}
-
-.card-text{
-font-size:17px;
-}
-
-.intro-card{
-font-size:18px;
-}
-
-}
-
+.footer a{color:#b08d57;text-decoration:none;}
 </style>
 </head>
-
 <body>
 
 <div class="bg"></div>
-<div class="overlay"></div>
+
+<div class="top-bar">
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</div>
+
+<div id="menuBackdrop" class="menu-backdrop" onclick="closeMenu()"></div>
+
+<nav id="mobileMenu" class="mobile-menu">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="how-it-works.html">How It Works</a>
+<a href="events.html" class="gold-link">PubLife Presents:</a>
+<a href="partners.html" class="gold-link">PubLife Partners</a>
+<a href="apply.html">Apply for Assistance</a>
+<a href="volunteer.html">Volunteer</a>
+<a href="donate.html" class="gold-link">Donate</a>
+<a href="contact.html">Contact</a>
+
+<div class="menu-footer">
+<div class="menu-divider"><span class="menu-shield">🛡</span></div>
+<img src="Logo.png" class="menu-logo">
+<div class="menu-tagline">Financial relief for hospitality workers.</div>
+</div>
+</nav>
 
 <div class="container">
 
@@ -150,62 +248,62 @@ Choose the giving option that works best for you.
 </div>
 
 <a href="https://www.zeffy.com/en-US/donation-form/help-publife-support-hospitality-workers-with-medical-costs" class="donation-card">
-
-<div class="card-title">
-DONATE THROUGH ZEFFY
-</div>
-
-<div class="card-text">
-Our preferred giving platform. No platform fees for nonprofits.
-</div>
-
+<div class="card-title">DONATE THROUGH ZEFFY</div>
+<div class="card-text">Our preferred giving platform. No platform fees for nonprofits.</div>
 </a>
 
 <a href="https://gofund.me/35bd90c1a" class="donation-card">
-
-<div class="card-title">
-DONATE THROUGH GOFUNDME
-</div>
-
-<div class="card-text">
-Support PubLife through our public fundraising campaign.
-</div>
-
+<div class="card-title">DONATE THROUGH GOFUNDME</div>
+<div class="card-text">Support PubLife through our public fundraising campaign.</div>
 </a>
 
 <a href="https://venmo.com/u/Pubalife" class="donation-card">
-
-<div class="card-title">
-DONATE THROUGH VENMO
-</div>
-
-<div class="card-text">
-Quick and secure giving through Venmo.
-</div>
-
+<div class="card-title">DONATE THROUGH VENMO</div>
+<div class="card-text">Quick and secure giving through Venmo.</div>
 </a>
 
 <a href="Sponsor Request Packet Light.pdf" class="trust-card">
-
-<div class="card-title">
-SPONSORSHIP & PARTNERSHIP INFORMATION
-</div>
-
+<div class="card-title">SPONSORSHIP & PARTNERSHIP INFORMATION</div>
 <div class="card-text">
 Learn how businesses, organizations, and individuals can support PubLife.
-
 <br><br>
-
 View Sponsor Packet
 </div>
-
 </a>
 
-<a href="index.html" class="back">
-← Back to Home
-</a>
+<div class="footer">
+<img src="Logo.png" class="footer-logo">
+<p>Kansas City, MO</p>
+<p><a href="mailto:info@publife.org">info@publife.org</a></p>
+
+<div class="socials">
+<a href="https://www.facebook.com/100069530393569/"><img src="facebook.png"></a>
+<a href="https://www.instagram.com/publifekc"><img src="instagram.png"></a>
+</div>
+
+<p style="margin-top:30px;">Registered 501(c)(3) nonprofit organization.</p>
+</div>
 
 </div>
+
+<script>
+const mobileMenu=document.getElementById("mobileMenu");
+const menuBackdrop=document.getElementById("menuBackdrop");
+
+function toggleMenu(){
+mobileMenu.classList.toggle("active");
+menuBackdrop.classList.toggle("active");
+}
+
+function closeMenu(){
+mobileMenu.classList.remove("active");
+menuBackdrop.classList.remove("active");
+}
+
+document.querySelectorAll(".mobile-menu a").forEach(link=>{
+link.addEventListener("click",()=>closeMenu());
+});
+</script>
 
 </body>
 </html>
