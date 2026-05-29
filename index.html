@@ -3,405 +3,347 @@
 <head>
 <meta charset="UTF-8">
 <title>PubLife</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <link rel="icon" type="image/png" href="favicon.png">
 
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-E2SVSM6J0N"></script>
-
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-
 gtag('config', 'G-E2SVSM6J0N');
 </script>
 
 <style>
-
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+margin:0;
+font-family:Georgia,serif;
+color:white;
+background:black;
+overflow-x:hidden;
 }
 
-html {
-  scroll-behavior: smooth;
+.bg{
+position:fixed;
+inset:0;
+background:
+linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.88)),
+url('partners-bg.jpg') center center/72% auto no-repeat;
+background-color:#050505;
+z-index:-2;
 }
 
-body {
-  margin: 0;
-  font-family: 'Georgia', serif;
-  color: white;
-  background: black;
-  overflow-x: hidden;
+.top-bar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:16px;
+z-index:100;
 }
 
-/* BACKGROUND */
-
-.bg {
-  position: fixed;
-  inset: 0;
-  background: url('bar-blur.jpg') center center / cover no-repeat;
-  z-index: -3;
+.menu-toggle{
+font-size:28px;
+color:white;
+cursor:pointer;
 }
 
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9));
-  z-index: -2;
+.mobile-menu{
+position:fixed;
+top:0;
+left:-300px;
+width:260px;
+height:100%;
+background:url('neon.jpg') center/cover no-repeat;
+padding:80px 20px 40px;
+display:flex;
+flex-direction:column;
+gap:12px;
+transition:.3s ease;
+z-index:999;
+overflow-y:auto;
 }
 
-/* NAV */
-
-.top-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 16px;
-  z-index: 10;
+.mobile-menu::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.88);
 }
 
-.menu-toggle {
-  font-size: 26px;
-  color: #e8e1d3;
-  cursor: pointer;
+.mobile-menu a{
+position:relative;
+color:white;
+text-decoration:none;
+font-size:18px;
+padding:12px;
+border-radius:8px;
+z-index:1;
 }
 
-/* SIDE MENU */
+.mobile-menu.active{left:0;}
 
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  left: -300px;
-  width: 260px;
-  height: 100%;
-  background: url('neon.jpg') center/cover no-repeat;
-  padding: 80px 20px 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  transition: 0.3s ease;
-  z-index: 9;
-  overflow-y: auto;
+.gold-link{color:#b08d57!important;font-weight:bold;}
+
+.menu-footer{
+position:relative;
+margin-top:auto;
+padding-top:40px;
+text-align:center;
+z-index:1;
 }
 
-.mobile-menu::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.88);
+.menu-divider{
+position:relative;
+margin-bottom:26px;
+height:1px;
+background:rgba(176,141,87,.6);
 }
 
-.mobile-menu a {
-  position: relative;
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  padding: 12px;
-  border-radius: 8px;
-  z-index: 1;
-  transition: 0.2s;
+.menu-shield{
+position:absolute;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+background:black;
+color:#b08d57;
+padding:0 10px;
+font-size:14px;
 }
 
-.mobile-menu a:hover {
-  background: rgba(255,255,255,0.1);
+.menu-logo{width:170px;margin-bottom:10px;}
+.menu-tagline{color:#b08d57;font-size:14px;font-style:italic;}
+
+.menu-backdrop{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.45);
+opacity:0;
+pointer-events:none;
+transition:.3s;
+z-index:998;
 }
 
-.mobile-menu a:active {
-  background: rgba(176,141,87,0.4);
+.menu-backdrop.active{
+opacity:1;
+pointer-events:all;
 }
 
-.mobile-menu.active {
-  left: 0;
+.hero-wrap{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:90px 20px 40px;
 }
 
-/* GOLD LINKS */
-
-.gold-link {
-  color: #b08d57 !important;
-  font-weight: bold;
+.content{
+width:100%;
+max-width:760px;
+text-align:center;
 }
 
-/* MENU FOOTER */
-
-.menu-footer {
-  position: relative;
-  margin-top: auto;
-  padding-top: 40px;
-  text-align: center;
-  z-index: 1;
+.logo{
+width:min(380px,80vw);
+display:block;
+margin:0 auto 20px;
 }
 
-.menu-divider {
-  position: relative;
-  margin-bottom: 26px;
-  height: 1px;
-  background: rgba(176,141,87,0.6);
+.headline{
+font-size:clamp(34px,6vw,68px);
+font-weight:bold;
+margin-bottom:24px;
 }
 
-.menu-shield {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background: black;
-  color: #b08d57;
-  padding: 0 10px;
-  font-size: 14px;
+.mission-panel{
+background:rgba(0,0,0,.56);
+border:1px solid rgba(176,141,87,.18);
+border-radius:24px;
+padding:28px;
+margin-bottom:26px;
+backdrop-filter:blur(5px);
+font-size:20px;
+line-height:1.8;
+color:#f0ece4;
 }
 
-.menu-logo {
-  width: 170px;
-  max-width: 100%;
-  margin-bottom: 10px;
+.card-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+margin-bottom:40px;
 }
 
-.menu-tagline {
-  color: #b08d57;
-  font-size: 14px;
-  font-style: italic;
-  line-height: 1.5;
+.card{
+display:block;
+text-decoration:none;
+color:white;
+background:rgba(0,0,0,.56);
+border:1px solid rgba(176,141,87,.18);
+border-radius:24px;
+padding:30px 24px;
+transition:.25s ease;
+backdrop-filter:blur(5px);
 }
 
-/* BACKDROP */
-
-.menu-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.3s;
-  z-index: 8;
+.card:hover{
+transform:translateY(-4px);
+border-color:rgba(176,141,87,.8);
 }
 
-.menu-backdrop.active {
-  opacity: 1;
-  pointer-events: all;
+.card.primary{
+border:2px solid rgba(176,141,87,.9);
+box-shadow:0 0 26px rgba(176,141,87,.18);
 }
 
-/* HERO */
-
-.hero-wrap {
-  min-height: 100dvh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 24px 20px 32px;
+.card-title{
+color:#d2b07b;
+font-size:28px;
+font-weight:bold;
+margin-bottom:12px;
 }
 
-/* CONTENT */
-
-.content {
-  width: 100%;
-  max-width: 380px;
-  margin: 0 auto;
-  text-align: center;
+.card-text{
+color:#ece7dd;
+line-height:1.7;
 }
 
-/* HEADLINE */
-
-.headline {
-  font-size: clamp(28px, 7vw, 36px);
-  line-height: 1.2;
-  margin-bottom: 20px;
-  font-weight: bold;
+.footer{
+text-align:center;
+margin-top:20px;
 }
 
-/* LOGO */
-
-.logo {
-  width: clamp(240px, 68vw, 390px);
-  margin: 14px auto 20px;
-  display: block;
+.footer-logo{
+width:220px;
+max-width:80%;
+margin-bottom:16px;
 }
 
-/* MISSION */
-
-.mission {
-  font-size: clamp(16px, 3.2vw, 18px);
-  line-height: 1.65;
-  margin-bottom: 28px;
-  color: #f4f1ea;
-  font-weight: 600;
+.footer a{
+color:#b08d57;
+text-decoration:none;
 }
 
-/* BUTTONS */
-
-.btn {
-  display: block;
-  width: 100%;
-  max-width: 340px;
-  margin: 12px auto;
-  padding: 16px;
-  font-size: 17px;
-  border-radius: 12px;
-  text-decoration: none;
-  text-align: center;
-  transition: all 0.2s ease;
+.socials{
+display:flex;
+justify-content:center;
+gap:18px;
+margin-top:20px;
 }
 
-/* DONATE */
+.socials img{width:42px;}
 
-.donate {
-  background: #b08d57;
-  color: black;
-  font-weight: bold;
-  box-shadow: 0 0 12px rgba(176,141,87,0.4);
+@media(max-width:700px){
+.bg{
+background:
+linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.9)),
+url('partners-bg.jpg') center top/135% auto no-repeat;
+background-color:#050505;
 }
-
-/* APPLY */
-
-.apply {
-  background: #e8e1d3;
-  color: black;
+.mission-panel{font-size:18px;}
 }
-
-/* FOOTER */
-
-.footer {
-  margin-top: 24px;
-  font-size: 14px;
-  text-align: center;
-}
-
-.footer a {
-  color: #b08d57;
-  text-decoration: underline;
-}
-
-/* SOCIALS */
-
-.socials {
-  margin-top: 16px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.socials img {
-  width: 42px;
-}
-
 </style>
 </head>
-
 <body>
 
 <div class="bg"></div>
-<div class="overlay"></div>
-
-<!-- NAV -->
 
 <div class="top-bar">
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </div>
 
 <div id="menuBackdrop" class="menu-backdrop" onclick="closeMenu()"></div>
 
 <nav id="mobileMenu" class="mobile-menu">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="how-it-works.html">How It Works</a>
+<a href="events.html" class="gold-link">PubLife Presents:</a>
+<a href="partners.html" class="gold-link">PubLife Partners</a>
+<a href="apply.html">Apply for Assistance</a>
+<a href="volunteer.html">Volunteer</a>
+<a href="donate.html" class="gold-link">Donate</a>
+<a href="contact.html">Contact</a>
 
-  <a href="index.html">Home</a>
-
-  <a href="about.html">About</a>
-
-  <a href="how-it-works.html">How It Works</a>
-
-  <a href="events.html" class="gold-link">PubLife Presents:</a>
-
-  <a href="partners.html" class="gold-link">PubLife Partners</a>
-
-  <a href="apply.html">Apply for Assistance</a>
-
-  <a href="volunteer.html">Volunteer</a>
-
-  <a href="contact.html">Contact</a>
-
-  <div class="menu-footer">
-
-    <div class="menu-divider">
-      <span class="menu-shield">🛡</span>
-    </div>
-
-    <img src="Logo.png" class="menu-logo">
-
-    <div class="menu-tagline">
-      Financial relief for hospitality workers.
-    </div>
-
-  </div>
-
+<div class="menu-footer">
+<div class="menu-divider"><span class="menu-shield">🛡</span></div>
+<img src="Logo.png" class="menu-logo">
+<div class="menu-tagline">Financial relief for hospitality workers.</div>
+</div>
 </nav>
 
-<!-- HERO -->
-
 <div class="hero-wrap">
+<div class="content">
 
-  <div class="content">
+<img src="Logo.png" class="logo" alt="PubLife Logo">
 
-    <div class="headline">
-      Financial relief for hospitality workers.
-    </div>
+<div class="headline">Financial relief for hospitality workers.</div>
 
-    <img src="Logo.png" class="logo">
+<div class="mission-panel">
+PubLife provides direct financial assistance for hospitality workers facing medical emergencies.
+</div>
 
-    <div class="mission">
-      PubLife provides direct financial assistance for hospitality workers facing medical emergencies.
-    </div>
+<div class="card-grid">
 
-    <div class="nonprofit">
-      Registered 501(c)(3) nonprofit organization.
-    </div>
+<a href="donate.html" class="card primary">
+<div class="card-title">Donate Now</div>
+<div class="card-text">Support hospitality workers facing medical emergencies.</div>
+</a>
 
-    <a href="donate.html" class="btn donate">
-      DONATE NOW
-    </a>
+<a href="apply.html" class="card">
+<div class="card-title">Apply for Assistance</div>
+<div class="card-text">Submit an assistance request through PubLife.</div>
+</a>
 
-    <a href="apply.html" class="btn apply">
-      APPLY HERE
-    </a>
+<a href="partners.html" class="card">
+<div class="card-title">PubLife Partners</div>
+<div class="card-text">Meet businesses and supporters helping sustain the mission.</div>
+</a>
 
-    <div class="footer">
-
-      Kansas City, MO<br>
-
-      <a href="mailto:info@publife.org">
-        info@publife.org
-      </a>
-
-      <div class="socials">
-
-        <a href="https://www.facebook.com/100069530393569/">
-          <img src="facebook.png">
-        </a>
-
-        <a href="https://www.instagram.com/publifekc">
-          <img src="instagram.png">
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
+<a href="events.html" class="card">
+<div class="card-title">PubLife Presents</div>
+<div class="card-text">Community events and fundraising experiences.</div>
+</a>
 
 </div>
 
+<div class="footer">
+<img src="Logo.png" class="footer-logo">
+
+<p>Kansas City, MO</p>
+
+<p><a href="mailto:info@publife.org">info@publife.org</a></p>
+
+<div class="socials">
+<a href="https://www.facebook.com/100069530393569/"><img src="facebook.png"></a>
+<a href="https://www.instagram.com/publifekc"><img src="instagram.png"></a>
+</div>
+
+<p style="margin-top:30px;">Registered 501(c)(3) nonprofit organization.</p>
+</div>
+
+</div>
+</div>
+
 <script>
+const mobileMenu=document.getElementById("mobileMenu");
+const menuBackdrop=document.getElementById("menuBackdrop");
 
-function toggleMenu() {
-  document.getElementById("mobileMenu").classList.toggle("active");
-  document.getElementById("menuBackdrop").classList.toggle("active");
+function toggleMenu(){
+mobileMenu.classList.toggle("active");
+menuBackdrop.classList.toggle("active");
 }
 
-function closeMenu() {
-  document.getElementById("mobileMenu").classList.remove("active");
-  document.getElementById("menuBackdrop").classList.remove("active");
+function closeMenu(){
+mobileMenu.classList.remove("active");
+menuBackdrop.classList.remove("active");
 }
 
+document.querySelectorAll(".mobile-menu a").forEach(link=>{
+link.addEventListener("click",()=>closeMenu());
+});
 </script>
 
 </body>
