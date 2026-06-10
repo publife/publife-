@@ -1,27 +1,406 @@
-<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1.0'><title>Contact | PubLife</title><style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Georgia,serif;color:#fff;background:#050505;overflow-x:hidden}
-.bg{position:fixed;inset:0;background:linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.88)),url('partners-bg.jpg') center/72% auto no-repeat;background-color:#050505;z-index:-2}
-.top-bar{position:fixed;top:0;width:100%;padding:16px;z-index:100}.menu-toggle{font-size:28px;cursor:pointer}
-.mobile-menu{position:fixed;top:0;left:-300px;width:260px;height:100%;background:url('neon.jpg') center/cover;padding:80px 20px;display:flex;flex-direction:column;gap:12px;transition:.3s;z-index:999}.mobile-menu:before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.88)}
-.mobile-menu a{position:relative;color:#fff;text-decoration:none;padding:12px;z-index:1}.mobile-menu.active{left:0}.gold-link{color:#b08d57!important;font-weight:bold}
-.menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:.3s;z-index:998}.menu-backdrop.active{opacity:1;pointer-events:all}
-.container{max-width:760px;margin:auto;padding:120px 20px 80px;text-align:center}.logo{width:220px;max-width:80%}
-.panel{background:rgba(0,0,0,.45);border:1px solid rgba(176,141,87,.25);border-radius:32px;padding:30px;margin-bottom:24px;backdrop-filter:blur(4px)}
-h1{font-size:clamp(42px,8vw,64px)}.subtitle{color:#d2b07b}.panel h2{color:#d2b07b}.panel p{line-height:1.8}
-.cta{display:inline-block;background:#b08d57;color:#000;text-decoration:none;padding:18px 34px;border-radius:12px;font-weight:bold}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}.card{border:1px solid rgba(176,141,87,.25);border-radius:20px;padding:20px}
-.footer a{color:#b08d57}.socials{display:flex;justify-content:center;gap:18px}.socials img{width:42px}
-</style></head><body><div class='bg'></div><div class='top-bar'><div class='menu-toggle' onclick='toggleMenu()'>☰</div></div><div id='menuBackdrop' class='menu-backdrop' onclick='closeMenu()'></div>
-<nav id='mobileMenu' class='mobile-menu'><a href='index.html'>Home</a><a href='about.html'>About</a><a href='how-it-works.html'>How It Works</a><a href='events.html' class='gold-link'>PubLife Presents:</a><a href='partners.html' class='gold-link'>PubLife Partners</a><a href='apply.html'>Apply for Assistance</a><a href='volunteer.html'>Volunteer</a><a href='donate.html' class='gold-link'>Donate</a><a href='contact.html'>Contact</a></nav>
-<div class='container'><a href='index.html'><img src='Logo.png' class='logo'></a><h1>Contact</h1><div class='subtitle'>Kansas City Metropolitan Area</div>
-<div class='panel'><h2>Get in Touch</h2><p>If you have any questions, would like to get involved, or need to reach out for any reason, you can contact us directly.</p><p>We strive to respond to inquiries within 1–3 business days.</p></div>
-<div class='panel'><a class='cta' href='mailto:info@publife.org'>EMAIL PUBLIFE</a></div>
-<div class='panel'><h2>Looking for Something Specific?</h2><div class='cards'>
-<div class='card'><h3>Need Assistance?</h3><a href='apply.html'>Apply for Assistance</a></div>
-<div class='card'><h3>Want to Volunteer?</h3><a href='volunteer.html'>Volunteer</a></div>
-<div class='card'><h3>Interested in Partnering?</h3><a href='partners.html'>PubLife Partners</a></div>
-</div></div>
-<div class='panel'><h2>Stay Connected</h2><p>Follow PubLife for updates, events, and opportunities to support hospitality workers.</p><div class='socials'><a href='https://www.facebook.com/100069530393569/'><img src='facebook.png'></a><a href='https://www.instagram.com/publifekc'><img src='instagram.png'></a></div></div>
-<div class='footer'><p>Kansas City, MO</p><p><a href='mailto:info@publife.org'>info@publife.org</a></p><p>Registered 501(c)(3) nonprofit organization.</p></div></div>
-<script>const m=document.getElementById('mobileMenu'),b=document.getElementById('menuBackdrop');function toggleMenu(){m.classList.toggle('active');b.classList.toggle('active')}function closeMenu(){m.classList.remove('active');b.classList.remove('active')}document.querySelectorAll('.mobile-menu a').forEach(l=>l.addEventListener('click',()=>closeMenu()));</script>
-</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact | PubLife</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* GLOBAL */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  color: white;
+  background: black;
+  overflow-x: hidden;
+}
+
+/* BACKGROUND */
+
+.bg {
+  position: fixed;
+  inset: 0;
+  background: url('inverted logo.png') center center / cover no-repeat;
+  z-index: -3;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: -2;
+}
+
+/* NAV */
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px;
+  z-index: 10;
+}
+
+.menu-toggle {
+  font-size: 26px;
+  color: #e8e1d3;
+  cursor: pointer;
+}
+
+/* SIDE MENU */
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 260px;
+  height: 100%;
+  background: url('neon.jpg') center/cover no-repeat;
+  padding: 80px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: 0.3s ease;
+  z-index: 9;
+  overflow-y: auto;
+}
+
+.mobile-menu::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+}
+
+.mobile-menu a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 12px;
+  border-radius: 8px;
+  z-index: 1;
+  transition: 0.2s;
+}
+
+.mobile-menu a:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.mobile-menu a:active {
+  background: rgba(176,141,87,0.4);
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+/* GOLD LINKS */
+
+.gold-link {
+  color: #b08d57 !important;
+  font-weight: bold;
+}
+
+/* MENU FOOTER */
+
+.menu-footer {
+  position: relative;
+  margin-top: auto;
+  padding-top: 40px;
+  text-align: center;
+  z-index: 1;
+}
+
+.menu-divider {
+  position: relative;
+  margin-bottom: 26px;
+  height: 1px;
+  background: rgba(176,141,87,0.6);
+}
+
+.menu-shield {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: black;
+  color: #b08d57;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+.menu-logo {
+  width: 170px;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.menu-tagline {
+  color: #b08d57;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* BACKDROP */
+
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 8;
+}
+
+.menu-backdrop.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* CONTENT */
+
+.wrapper {
+  padding: 110px 22px 70px;
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content-box {
+  background: rgba(0,0,0,0.38);
+  border: 1px solid rgba(176,141,87,0.12);
+  border-radius: 18px;
+  padding: 40px 28px;
+  backdrop-filter: blur(2px);
+}
+
+h1 {
+  font-size: clamp(36px, 8vw, 50px);
+  margin-bottom: 24px;
+}
+
+p {
+  line-height: 1.9;
+  margin-bottom: 24px;
+  font-size: 18px;
+  color: #f0ece4;
+}
+
+.email {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 16px 28px;
+  font-size: 18px;
+  color: black;
+  background: #b08d57;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 14px rgba(176,141,87,0.28);
+  transition: 0.2s ease;
+}
+
+.email:hover {
+  transform: translateY(-2px);
+}
+
+/* FOOTER */
+
+.footer {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 220px;
+  max-width: 80%;
+  margin-bottom: 20px;
+}
+
+.footer p {
+  margin: 10px 0;
+  color: #e8e1d3;
+  line-height: 1.7;
+}
+
+.footer a {
+  color: #b08d57;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.socials img {
+  width: 42px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .wrapper {
+    padding: 100px 18px 60px;
+  }
+
+  .content-box {
+    padding: 30px 22px;
+  }
+
+  p {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+}
+
+
+.contact-cards{display:flex;flex-direction:column;gap:16px;margin-top:30px;}
+.contact-card{display:block;padding:18px;border-radius:14px;background:rgba(0,0,0,.45);border:1px solid rgba(176,141,87,.3);color:#f0ece4;text-decoration:none;transition:.2s;}
+.contact-card:hover{transform:translateY(-2px);}
+.contact-card strong{display:block;color:#b08d57;margin-bottom:6px;}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div class="overlay"></div>
+
+<!-- NAV -->
+
+<div class="top-bar">
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</div>
+
+<div id="menuBackdrop" class="menu-backdrop" onclick="closeMenu()"></div>
+
+<nav id="mobileMenu" class="mobile-menu">
+
+  <a href="index.html">Home</a>
+
+  <a href="about.html">About</a>
+
+  <a href="how-it-works.html">How It Works</a>
+
+  <a href="events.html" class="gold-link">PubLife Presents:</a>
+
+  <a href="partners.html" class="gold-link">PubLife Partners</a>
+
+  <a href="apply.html">Apply for Assistance</a>
+
+  <a href="volunteer.html">Volunteer</a>
+
+  <a href="donate.html" class="gold-link">Donate</a>
+
+  <a href="contact.html">Contact</a>
+
+  <div class="menu-footer">
+
+    <div class="menu-divider">
+      <span class="menu-shield">🛡</span>
+    </div>
+
+    <img src="Logo.png" class="menu-logo">
+
+    <div class="menu-tagline">
+      Financial relief for hospitality workers.
+    </div>
+
+  </div>
+
+</nav>
+
+<!-- CONTENT -->
+
+<div class="wrapper">
+
+  <div class="content-box">
+
+    <h1>Contact</h1>
+
+    <p>
+      If you have any questions, would like to get involved, or need to reach out for any reason, you can contact us directly.
+    </p>
+
+    <p>
+      We aim to respond as quickly as possible.
+    </p>
+
+    <a href="mailto:info@publife.org" class="email">
+      info@publife.org
+    </a>
+
+  </div>
+
+  <!-- FOOTER -->
+
+  <div class="footer">
+
+    <img src="Logo.png" class="footer-logo">
+
+    <p>
+      Financial relief for hospitality workers.
+    </p>
+
+    <p>
+      Kansas City, MO
+    </p>
+
+    <p>
+      <a href="mailto:info@publife.org">
+        info@publife.org
+      </a>
+    </p>
+
+    
+<div class="contact-cards">
+<a class="contact-card" href="mailto:info@publife.org"><strong>Email</strong>info@publife.org</a>
+<a class="contact-card" href="https://www.facebook.com/100069530393569/" target="_blank"><strong>Facebook</strong>Follow PubLife</a>
+<a class="contact-card" href="https://www.instagram.com/publifekc" target="_blank"><strong>Instagram</strong>@publifekc</a>
+</div>
+
+<p style="margin-top:30px;">
+
+      Registered 501(c)(3) nonprofit organization.
+    </p>
+
+  </div>
+
+</div>
+
+<script>
+
+function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("active");
+  document.getElementById("menuBackdrop").classList.toggle("active");
+}
+
+function closeMenu() {
+  document.getElementById("mobileMenu").classList.remove("active");
+  document.getElementById("menuBackdrop").classList.remove("active");
+}
+
+</script>
+
+</body>
+</html>
