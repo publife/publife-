@@ -29,9 +29,29 @@ box-shadow:0 0 0 1px rgba(255,255,255,.12),0 0 32px rgba(176,141,87,.15);}
 .button{display:inline-block;background:#b08d57;color:black;padding:14px 24px;
 border-radius:10px;text-decoration:none;font-weight:bold;margin:10px}
 .footer{text-align:center;margin-top:50px}
+
+.mobile-menu{position:fixed;top:0;left:-300px;width:260px;height:100%;background:#111;padding:80px 20px;display:flex;flex-direction:column;gap:12px;transition:.3s;z-index:999}
+.mobile-menu.active{left:0}
+.mobile-menu a{color:white;text-decoration:none;padding:12px}
+.menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:.3s;z-index:998}
+.menu-backdrop.active{opacity:1;pointer-events:all}
+.gold-link{color:#b08d57 !important;font-weight:bold}
 </style></head>
 <body>
-<div class="top-bar"><span class="menu-toggle">☰</span></div>
+<div id="menuBackdrop" class="menu-backdrop" onclick="closeMenu()"></div>
+<nav id="mobileMenu" class="mobile-menu">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="how-it-works.html">How It Works</a>
+<a href="events.html" class="gold-link">PubLife Presents:</a>
+<a href="partners.html" class="gold-link">PubLife Partners</a>
+<a href="apply.html">Apply for Assistance</a>
+<a href="volunteer.html">Volunteer</a>
+<a href="donate.html" class="gold-link">Donate</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+<div class="top-bar"><span class="menu-toggle" onclick="toggleMenu()">☰</span></div>
 <div class="wrapper">
 <div class="logo"><a href="index.html"><img src="Logo.png" alt="PubLife"></a></div>
 <div class="hero">
@@ -81,4 +101,11 @@ border-radius:10px;text-decoration:none;font-weight:bold;margin:10px}
 
 <div class="footer"><img src="Logo.png" style="width:180px"><p>Financial relief for hospitality workers.</p></div>
 </div>
+
+<script>
+const mobileMenu=document.getElementById("mobileMenu");
+const menuBackdrop=document.getElementById("menuBackdrop");
+function toggleMenu(){mobileMenu.classList.toggle("active");menuBackdrop.classList.toggle("active");}
+function closeMenu(){mobileMenu.classList.remove("active");menuBackdrop.classList.remove("active");}
+</script>
 </body></html>
