@@ -236,15 +236,23 @@ margin-top:20px;
 .socials img{width:42px;}
 
 
-.event-card{position:relative;overflow:hidden;text-align:center;}
-.event-logo-full{width:100%;border-radius:16px;display:block;}
-.flyer-overlay{
+.event-card{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:16px;
+text-align:center;
+}
+
+.event-logo-full{
+width:100%;
+border-radius:16px;
 display:block;
-width:58%;
-max-width:280px;
-margin:-38% auto 0;
-position:relative;
-z-index:2;
+}
+
+.flyer-overlay{
+width:70%;
+max-width:180px;
 border-radius:14px;
 box-shadow:0 8px 28px rgba(0,0,0,.45);
 }
@@ -308,6 +316,13 @@ PubLife provides direct financial assistance for hospitality workers facing medi
 
 <a href="events.html" class="card event-card">
 <img src="PubLife presents logo_20260526_143756_0000 (2).png" class="event-logo-full" alt="PubLife Presents">
+
+<div class="card-title">PubLife Presents:</div>
+
+<div class="card-text">
+Community events and fundraising experiences.
+</div>
+
 <img src="LawnParty26.png" class="flyer-overlay" alt="Lawn Party 2026">
 </a>
 
