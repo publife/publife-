@@ -236,49 +236,17 @@ margin-top:20px;
 .socials img{width:42px;}
 
 
-.event-card{
-position:relative;
-overflow:hidden;
-text-align:center;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-min-height:320px;
-border:2px solid rgba(176,141,87,.9);
-box-shadow:0 0 26px rgba(176,141,87,.18);
-}
-
-.event-card-bg{
-position:absolute;
-inset:0;
-background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.7)),
-url('PubLife presents logo_20260526_143756_0000 (2).png') center center/cover no-repeat;
-z-index:0;
-}
-
-.event-card .flyer-overlay{
+.event-card{position:relative;overflow:hidden;text-align:center;}
+.event-logo-full{width:100%;border-radius:16px;display:block;}
+.flyer-overlay{
+display:block;
+width:58%;
+max-width:280px;
+margin:-38% auto 0;
 position:relative;
 z-index:2;
-display:block;
-width:72%;
-max-width:180px;
-margin:18px auto;
 border-radius:14px;
 box-shadow:0 8px 28px rgba(0,0,0,.45);
-}
-
-.event-content{
-position:relative;
-z-index:2;
-}
-
-.event-card .card-title{
-margin-bottom:10px;
-}
-
-.event-card .card-text{
-margin-bottom:0;
 }
 
 @media(max-width:700px){
@@ -339,12 +307,8 @@ PubLife provides direct financial assistance for hospitality workers facing medi
 </a>
 
 <a href="events.html" class="card event-card">
-<div class="event-card-bg"></div>
+<img src="PubLife presents logo_20260526_143756_0000 (2).png" class="event-logo-full" alt="PubLife Presents">
 <img src="LawnParty26.png" class="flyer-overlay" alt="Lawn Party 2026">
-<div class="event-content">
-<div class="card-title">PubLife Presents:</div>
-<div class="card-text">Community events and fundraising experiences.</div>
-</div>
 </a>
 
 <a href="apply.html" class="card">
@@ -356,6 +320,8 @@ PubLife provides direct financial assistance for hospitality workers facing medi
 <div class="card-title">PubLife Partners</div>
 <div class="card-text">Meet businesses and supporters helping sustain the mission.</div>
 </a>
+
+
 
 </div>
 
