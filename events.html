@@ -24,11 +24,14 @@ body {
   overflow-x: hidden;
 }
 
-/* HERO SECTION */
 
-.hero {
-  position: relative;
-  min-height: 100vh;
+.hero-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
 
   background:
     linear-gradient(
@@ -39,9 +42,16 @@ body {
       rgba(0,0,0,0.92) 88%,
       #050505 100%
     ),
-    url('presents-hero.png') center top / contain no-repeat fixed;
+    url('presents-hero.png') center top / contain no-repeat;
 
   background-color: #050505;
+}
+
+/* HERO SECTION */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
 }
 
 /* TOP BAR */
@@ -381,21 +391,6 @@ body {
 
 @media (max-width: 600px) {
 
-  .hero {
-    background:
-      linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.10) 0%,
-        rgba(0,0,0,0.28) 38%,
-        rgba(0,0,0,0.72) 72%,
-        rgba(0,0,0,0.95) 90%,
-        #050505 100%
-      ),
-      url('presents-hero.png') center top / contain no-repeat fixed;
-
-    background-color: #050505;
-  }
-
   .hero-content {
     padding: 340px 20px 100px;
   }
@@ -419,6 +414,8 @@ body {
 </head>
 
 <body>
+
+<div class="hero-bg"></div>
 
 <!-- TOP BAR -->
 
