@@ -6,6 +6,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<meta property="og:title" content="PubLife Presents: The 2026 Lawn Party">
+<meta property="og:description" content="Join us July 12 at F325 BBQ in North Kansas City to support local hospitality workers.">
+<meta property="og:image" content="LawnParty26.jpg">
+<meta property="og:type" content="website">
+
+
 <style>
 
 * {
@@ -524,6 +530,10 @@ body {
           GET DIRECTIONS
         </a>
 
+        <button class="partner-btn" onclick="shareEvent()" style="background:none;font-family:inherit;cursor:pointer;">
+          ↗ SHARE EVENT
+        </button>
+
         <a href="donate.html" class="partner-btn">
           DONATE TO PUBLIFE
         </a>
@@ -603,6 +613,24 @@ function toggleMenu() {
 function closeMenu() {
   document.getElementById("mobileMenu").classList.remove("active");
   document.getElementById("menuBackdrop").classList.remove("active");
+}
+
+
+async function shareEvent() {
+  const shareData = {
+    title: "PubLife Presents: The 2026 Lawn Party",
+    text: "Join us July 12 at F325 BBQ in North Kansas City.",
+    url: window.location.href
+  };
+
+  if (navigator.share) {
+    try {
+      await navigator.share(shareData);
+    } catch (e) {}
+  } else {
+    navigator.clipboard.writeText(window.location.href);
+    alert("Event link copied to clipboard.");
+  }
 }
 
 </script>
