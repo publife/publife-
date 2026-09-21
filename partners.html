@@ -469,6 +469,21 @@ background: rgba(255,255,255,0.96) !important;
 }
 
 </style>
+
+<style id="publife-categorized-menu">
+.mobile-menu details{position:relative;z-index:1;margin:0;padding:0}
+.mobile-menu summary{list-style:none;cursor:pointer;color:white;font-size:18px;padding:12px;border-radius:8px;transition:.2s;display:flex;justify-content:space-between;align-items:center}
+.mobile-menu summary::-webkit-details-marker{display:none}
+.mobile-menu summary span{color:#b08d57;font-size:16px;transition:.2s}
+.mobile-menu details[open] summary span{transform:rotate(180deg)}
+.mobile-menu summary:hover{background:rgba(255,255,255,.1)}
+.mobile-menu details[open] summary{color:#b08d57}
+.mobile-menu .submenu{display:flex;flex-direction:column;gap:2px;padding:2px 0 6px 14px;border-left:1px solid rgba(176,141,87,.45);margin-left:12px}
+.mobile-menu .submenu a{font-size:16px;padding:9px 10px;color:#eee9df}
+.mobile-menu .submenu a:hover{background:rgba(176,141,87,.12)}
+.mobile-menu > a.standalone{position:relative}
+</style>
+
 </head>
 <body>
 <div class="bg"></div>
@@ -477,24 +492,33 @@ background: rgba(255,255,255,0.96) !important;
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </div>
 <div class="menu-backdrop" id="menuBackdrop" onclick="closeMenu()"></div>
-<nav class="mobile-menu" id="mobileMenu">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
+<nav id="mobileMenu" class="mobile-menu">
+<a href="index.html">HOME</a>
+<details><summary>ABOUT US <span>▾</span></summary>
+<div class="submenu">
+<a href="about.html">About PubLife</a>
 <a href="how-it-works.html">How It Works</a>
-<a class="gold-link" href="events.html">PubLife Presents:</a>
-<a class="gold-link" href="partners.html">PubLife Partners</a>
+<a href="board.html">Meet Our Board of Directors</a>
+<a href="partners.html">PubLife Partners</a>
+</div></details>
+<details><summary>PUBLIFE ASSISTANCE <span>▾</span></summary>
+<div class="submenu">
 <a href="apply.html">Apply for Assistance</a>
-<a href="volunteer.html">Volunteer</a>
-<a class="gold-link" href="donate.html">Donate</a>
-<a href="contact.html">Contact</a>
+<a href="resource.html">Community Resources</a>
+</div></details>
+<details><summary>SUPPORT PUBLIFE <span>▾</span></summary>
+<div class="submenu">
+<a href="donate.html">Donate Now</a>
+<a href="volunteer.html">Get Involved</a>
+<a href="sponsor.html">Sponsor Opportunities</a>
+</div></details>
+<a href="events.html" class="gold-link standalone">PUBLIFE PRESENTS:</a>
+<a href="monthly.html" class="gold-link standalone">PUBLIFE MONTHLY</a>
+<a href="contact.html" class="standalone">CONTACT PUBLIFE DIRECTLY</a>
 <div class="menu-footer">
-<div class="menu-divider">
-<span class="menu-shield">🛡</span>
-</div>
-<img class="menu-logo" src="Logo.png"/>
-<div class="menu-tagline">
-      Financial relief for hospitality workers.
-    </div>
+<div class="menu-divider"><span class="menu-shield">🛡</span></div>
+<img src="Logo.png" class="menu-logo" alt="PubLife">
+<div class="menu-tagline">Financial relief for hospitality workers.</div>
 </div>
 </nav>
 <!-- PAGE -->
