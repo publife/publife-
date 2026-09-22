@@ -30,8 +30,8 @@ box-shadow:0 0 0 1px rgba(255,255,255,.12),0 0 32px rgba(176,141,87,.15);}
 border-radius:10px;text-decoration:none;font-weight:bold;margin:10px}
 .footer{text-align:center;margin-top:50px}
 
-.mobile-menu{position:fixed;top:0;left:-300px;width:260px;height:100%;background:#111;padding:80px 20px;display:flex;flex-direction:column;gap:12px;transition:.3s;z-index:999}
-.mobile-menu.active{left:0}
+.mobile-menu{position:fixed;top:0;left:-300px;width:260px;height:100%;background:url('neon.jpg') center/cover no-repeat;padding:80px 20px;display:flex;flex-direction:column;gap:12px;transition:.3s;z-index:999}
+.mobile-menu:before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.42);z-index:0}.mobile-menu > *{position:relative;z-index:1}.mobile-menu.active{left:0}
 .mobile-menu a{color:white;text-decoration:none;padding:12px}
 .menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:.3s;z-index:998}
 .menu-backdrop.active{opacity:1;pointer-events:all}
@@ -86,7 +86,6 @@ border-radius:10px;text-decoration:none;font-weight:bold;margin:10px}
 
 <div class="top-bar"><span class="menu-toggle" onclick="toggleMenu()">☰</span></div>
 <div class="wrapper">
-<div class="logo"><a href="index.html"><img src="Logo.png" alt="PubLife"></a></div>
 <div class="hero">
 <h1>SPONSORSHIP OPPORTUNITIES</h1>
 <div class="tagline">Your contributions help us continue to serve the service industry.</div>
