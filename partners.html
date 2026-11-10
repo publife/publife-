@@ -469,45 +469,10 @@ background: rgba(255,255,255,0.96) !important;
 }
 
 
-/* COMMUNITY SPONSOR CARDS */
-.community-sponsor-card .logo-panel {
-  min-height: 150px;
-  padding: 16px;
-}
-.community-sponsor-card .partner-card-logo {
-  max-width: 210px;
-  height: 112px;
-}
-.community-sponsor-card .partner-card-content p {
-  margin: 8px 0 0;
-  font-size: 15px;
-  line-height: 1.65;
-  color: #ece7dd;
-}
-.community-sponsor-card .partner-contact {
-  display: block;
-  margin-top: 10px;
-  color: #b08d57;
-  font-size: 14px;
-  line-height: 1.6;
-  overflow-wrap: anywhere;
-}
-.community-sponsor-card .partner-contact a {
-  color: #b08d57;
-  text-decoration: none;
-}
-.community-sponsor-card .partner-contact a:hover {
-  text-decoration: underline;
-}
-.community-sponsor-card .logo-panel-incolab {
-  background: #10194f;
-}
-.community-sponsor-card .logo-panel-jcph {
-  background: #050505;
-}
-
+/* Community sponsor contact links */
+.community-sponsor-card .partner-contact a { color: #b08d57; text-decoration: none; }
+.community-sponsor-card .partner-contact a:hover { text-decoration: underline; }
 </style>
-
 <style id="publife-categorized-menu">
 .mobile-menu details{position:relative;z-index:1;margin:0;padding:0}
 .mobile-menu summary{list-style:none;cursor:pointer;color:white;font-size:18px;padding:12px;border-radius:8px;transition:.2s;display:flex;justify-content:space-between;align-items:center}
@@ -528,7 +493,6 @@ background: rgba(255,255,255,0.96) !important;
 .menu-logo{display:block;width:170px;max-width:100%;height:auto;margin:0 auto 10px}
 .menu-tagline{color:#b08d57;font-size:14px;font-style:italic}
 </style>
-
 </head>
 <body>
 <div class="bg"></div>
@@ -537,7 +501,7 @@ background: rgba(255,255,255,0.96) !important;
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </div>
 <div class="menu-backdrop" id="menuBackdrop" onclick="closeMenu()"></div>
-<nav id="mobileMenu" class="mobile-menu">
+<nav class="mobile-menu" id="mobileMenu">
 <a href="index.html">HOME</a>
 <details><summary>ABOUT US <span>▾</span></summary>
 <div class="submenu">
@@ -557,12 +521,12 @@ background: rgba(255,255,255,0.96) !important;
 <a href="volunteer.html">Get Involved</a>
 <a href="sponsor.html">Sponsor Opportunities</a>
 </div></details>
-<a href="events.html" class="gold-link standalone">PUBLIFE PRESENTS:</a>
-<a href="monthly.html" class="gold-link standalone">PUBLIFE MONTHLY</a>
-<a href="contact.html" class="standalone">CONTACT PUBLIFE DIRECTLY</a>
+<a class="gold-link standalone" href="events.html">PUBLIFE PRESENTS:</a>
+<a class="gold-link standalone" href="monthly.html">PUBLIFE MONTHLY</a>
+<a class="standalone" href="contact.html">CONTACT PUBLIFE DIRECTLY</a>
 <div class="menu-footer">
 <div class="menu-divider"><span class="menu-shield">🛡</span></div>
-<img src="Logo.png" class="menu-logo" alt="PubLife">
+<img alt="PubLife" class="menu-logo" src="Logo.png"/>
 <div class="menu-tagline">Financial relief for hospitality workers.</div>
 </div>
 </nav>
@@ -571,8 +535,8 @@ background: rgba(255,255,255,0.96) !important;
 <!-- HERO -->
 <div style="text-align:center; margin-bottom:40px;">
 <a href="index.html">
-<img alt="PubLife" src="Logo.png" style="width:220px; max-width:75%;"/>
-</a>
+<img alt="PubLife" src="Logo.png" style="width:220px; max-width:75%;">
+</img></a>
 <section class="hero">
 <h1>PARTNERS</h1>
 <div class="hero-sub">
@@ -730,42 +694,7 @@ background: rgba(255,255,255,0.96) !important;
 <div class="logo-panel logo-panel-white"><img alt="RoKC NKC" class="partner-card-logo" src="ROKCLogo.png"/></div><div class="partner-card-content"><h3>RoKC NKC</h3><div class="partner-url">climbkc.com</div></div>
 </div>
 </a>
-<a class="partner-card-link" href="https://hydrationivkc.com/" target="_blank"><div class="partner-box"><div class="logo-panel"><img alt="Hydration IV KC" class="partner-card-logo" src="hydration logo.png"/></div><div class="partner-card-content"><h3>Hydration IV KC</h3><div class="partner-url">hydrationivkc.com</div></div></div></a><a class="partner-card-link" href="https://www.parkvilletumblingandacro.com/" target="_blank"><div class="partner-box"><div class="logo-panel"><img alt="Parkville Tumbling &amp; Acro" class="partner-card-logo" src="tumbling logo.png"/></div><div class="partner-card-content"><h3>Parkville Tumbling &amp; Acro</h3><div class="partner-url">www.parkvilletumblingandacro.com</div></div></div></a><a class="partner-card-link" href="https://www.instagram.com/chantells_originals?igsh=MXZtOHJiOTQwMndmOQ==" target="_blank"><div class="partner-box"><div class="logo-panel"><img alt="Chantell's Originals" class="partner-card-logo" src="chantell logo.png"/></div><div class="partner-card-content"><h3>Chantell's Originals</h3><div class="partner-url">www.instagram.com/chantells_originals?igsh=MXZtOHJiOTQwMndmOQ==</div></div></div></a><a class="partner-card-link" href="https://www.kansascitycurrent.com/" target="_blank"><div class="partner-box"><div class="logo-panel"><img alt="KC Current" class="partner-card-logo" src="Current logo.png"/></div><div class="partner-card-content"><h3>KC Current</h3><div class="partner-url">www.kansascitycurrent.com</div></div></div></a><a class="partner-card-link" href="https://zeffy.com" target="_blank"><div class="partner-box"><div class="logo-panel logo-panel-white"><img alt="Zeffy" class="partner-card-logo" src="Zeffy Logo.png"/></div><div class="partner-card-content"><h3>Zeffy</h3><div class="partner-url">zeffy.com</div></div></div></a>
-<div class="partner-box community-sponsor-card">
-  <div class="logo-panel logo-panel-white"><img alt="Heartland Mental Health" class="partner-card-logo" src="HeartlandMentalHealth_logo.png"/></div>
-  <div class="partner-card-content">
-    <h3>Heartland Mental Health</h3>
-    <p>PubLife partner helping strengthen connections to mental health support and resources for hospitality workers.</p>
-    <span class="partner-contact">12721 Metcalf Ave, Suite 103<br/>Overland Park, KS 66213<br/><a href="tel:+19136386954">913-638-6954</a><br/><a href="https://heartlandmentalhealth.net/" target="_blank" rel="noopener noreferrer">heartlandmentalhealth.net</a></span>
-  </div>
-</div>
-<div class="partner-box community-sponsor-card">
-  <div class="logo-panel logo-panel-jcph"><img alt="Jackson County Public Health" class="partner-card-logo" src="JCPH_logo.png"/></div>
-  <div class="partner-card-content">
-    <h3>Jackson County Public Health</h3>
-    <p>PubLife partner supporting stronger connections to public health information, services, and community resources.</p>
-    <span class="partner-contact">3651 NE Ralph Powell Rd<br/>Lee's Summit, MO 64064<br/><a href="tel:+18164046415">816-404-6415</a><br/><a href="mailto:askjcph@uhkc.org">askjcph@uhkc.org</a><br/><a href="http://jcph.org/" target="_blank" rel="noopener noreferrer">jcph.org</a></span>
-  </div>
-</div>
-<a class="partner-card-link community-sponsor-card" href="mailto:incolab@uhkc.org">
-  <div class="partner-box">
-    <div class="logo-panel logo-panel-incolab"><img alt="InCoLab" class="partner-card-logo" src="InCoLab_logo.png"/></div>
-    <div class="partner-card-content">
-      <h3>InCoLab</h3>
-      <p>A community collaborator whose introductions and connections have helped PubLife build relationships and expand its reach.</p>
-      <span class="partner-contact">Contact InCoLab by email<br/><a href="mailto:incolab@uhkc.org">incolab@uhkc.org</a></span>
-    </div>
-  </div>
-</a>
-<div class="partner-box community-sponsor-card">
-  <div class="logo-panel logo-panel-white"><img alt="IRIS network" class="partner-card-logo" src="IRIS_logo.png"/></div>
-  <div class="partner-card-content">
-    <h3>IRIS Network</h3>
-    <p>PubLife is part of the IRIS network, a connected community focused on helping families thrive. Network participation helps PubLife build connections and link hospitality workers with support beyond direct financial assistance.</p>
-  </div>
-</div>
-
-</div>
+<a class="partner-card-link" href="https://hydrationivkc.com/" target="_blank"><div class="partner-box"><div class="logo-panel"><img alt="Hydration IV KC" class="partner-card-logo" src="hydration logo.png"/></div><div class="partner-card-content"><h3>Hydration IV KC</h3><div class="partner-url">hydrationivkc.com</div></div></div></a><a class="partner-card-link" href="https://www.parkvilletumblingandacro.com/" target="_blank"><div class="partner-box"><div class="logo-panel"><img alt="Parkville Tumbling &amp; Acro" class="partner-card-logo" src="tumbling logo.png"/></div><div class="partner-card-content"><h3>Parkville Tumbling &amp; Acro</h3><div class="partner-url">www.parkvilletumblingandacro.com</div></div></div></a><a class="partner-card-link" href="https://www.instagram.com/chantells_originals?igsh=MXZtOHJiOTQwMndmOQ==" target="_blank"><div class="partner-box"><div class="logo-panel"><img alt="Chantell's Originals" class="partner-card-logo" src="chantell logo.png"/></div><div class="partner-card-content"><h3>Chantell's Originals</h3><div class="partner-url">www.instagram.com/chantells_originals?igsh=MXZtOHJiOTQwMndmOQ==</div></div></div></a><a class="partner-card-link" href="https://www.kansascitycurrent.com/" target="_blank"><div class="partner-box"><div class="logo-panel"><img alt="KC Current" class="partner-card-logo" src="Current logo.png"/></div><div class="partner-card-content"><h3>KC Current</h3><div class="partner-url">www.kansascitycurrent.com</div></div></div></a><a class="partner-card-link" href="https://zeffy.com" target="_blank"><div class="partner-box"><div class="logo-panel logo-panel-white"><img alt="Zeffy" class="partner-card-logo" src="Zeffy Logo.png"/></div><div class="partner-card-content"><h3>Zeffy</h3><div class="partner-url">zeffy.com</div></div></div></a><div class="partner-card-link community-sponsor-card"><div class="partner-box"><div class="logo-panel logo-panel-white"><img alt="Heartland Mental Health" class="partner-card-logo" src="HeartlandMentalHealth_logo.png"/></div><div class="partner-card-content"><h3>Heartland Mental Health</h3><p>PubLife partner helping strengthen connections to mental health support and resources for hospitality workers.</p><div class="partner-url partner-contact">12721 Metcalf Ave, Suite 103<br/>Overland Park, KS 66213<br/><a href="tel:+19136386954">913-638-6954</a><br/><a href="https://heartlandmentalhealth.net/">heartlandmentalhealth.net</a></div></div></div></div><div class="partner-card-link community-sponsor-card"><div class="partner-box"><div class="logo-panel"><img alt="Jackson County Public Health" class="partner-card-logo" src="JCPH_logo.png"/></div><div class="partner-card-content"><h3>Jackson County Public Health</h3><p>PubLife partner supporting stronger connections to public health information, services, and community resources.</p><div class="partner-url partner-contact">3651 NE Ralph Powell Rd<br/>Lee's Summit, MO 64064<br/><a href="tel:+18164046415">816-404-6415</a><br/><a href="mailto:askjcph@uhkc.org">askjcph@uhkc.org</a><br/><a href="http://jcph.org/">jcph.org</a></div></div></div></div><div class="partner-card-link community-sponsor-card"><div class="partner-box"><div class="logo-panel"><img alt="InCoLab" class="partner-card-logo" src="InCoLab_logo.png"/></div><div class="partner-card-content"><h3>InCoLab</h3><p>A community collaborator whose introductions and connections have helped PubLife build relationships and expand its reach.</p><div class="partner-url partner-contact"><a href="mailto:incolab@uhkc.org">incolab@uhkc.org</a></div></div></div></div><div class="partner-card-link community-sponsor-card"><div class="partner-box"><div class="logo-panel logo-panel-white"><img alt="IRIS Network" class="partner-card-logo" src="IRIS_logo.png"/></div><div class="partner-card-content"><h3>IRIS Network</h3><p>PubLife is part of the IRIS network, a connected community focused on helping families thrive. Network participation helps PubLife build connections and link hospitality workers with support beyond direct financial assistance.</p></div></div></div></div>
 </section>
 <!-- FOOTER -->
 <div class="footer">
@@ -829,5 +758,5 @@ function scrollToSection(id) {
 }
 
 </script>
-</body>
+</div></body>
 </html>
